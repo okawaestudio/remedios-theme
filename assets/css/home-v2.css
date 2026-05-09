@@ -283,7 +283,8 @@
   grid-template-columns: repeat(5, 1fr);
   gap: var(--v2-s-6);
 }
-.v2-megamenu__col h4 {
+.v2-megamenu__col h4,
+.v2-megamenu__col-label {
   font-family: var(--v2-font-mono);
   font-size: var(--v2-fs-eyebrow);
   font-weight: 500;
@@ -1359,3 +1360,313 @@
   opacity: 1 !important;
   transform: none !important;
 }
+
+/* ==========================================================================
+   v2.1 (correcciones) · estilos específicos de los partials reformados
+   ========================================================================== */
+
+/* ── Header sólido (sin top-strip arriba) ─────────────────────────────── */
+.v2-header.v2-header--solid {
+  background: color-mix(in srgb, var(--v2-bg) 95%, transparent);
+  border-bottom: 1px solid var(--v2-line);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+}
+
+/* ── HERO v2.1 full-bleed Madrid ──────────────────────────────────────── */
+.v2-hero-bg {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-block: clamp(6rem, 12vw, 12rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  min-height: 600px;
+  overflow: hidden;
+}
+.v2-hero-bg__picture {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+.v2-hero-bg__picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.v2-hero-bg__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(22, 37, 66, 0.78), rgba(22, 37, 66, 0.55));
+  z-index: -1;
+}
+.v2-hero-bg__inner {
+  width: min(880px, calc(100% - 2 * var(--v2-gutter)));
+  text-align: left;
+  color: #fff;
+}
+.v2-hero-bg__eyebrow {
+  display: inline-block;
+  font-family: var(--v2-font-mono);
+  font-size: var(--v2-fs-eyebrow);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: var(--v2-s-5);
+}
+.v2-hero-bg__title {
+  font-family: var(--v2-font-display);
+  font-weight: 700;
+  font-size: var(--v2-fs-h1);
+  line-height: var(--v2-lh-tight);
+  letter-spacing: var(--v2-tracking-display);
+  color: #fff;
+  margin: 0 0 var(--v2-s-5) 0;
+}
+.v2-hero-bg__accent {
+  font-style: italic;
+  color: var(--v2-accent);
+  font-weight: 700;
+}
+.v2-hero-bg__lead {
+  font-family: var(--v2-font-sans);
+  font-size: var(--v2-fs-lead);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 56ch;
+  margin: 0 0 var(--v2-s-7) 0;
+}
+.v2-hero-bg__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--v2-s-3);
+  margin-bottom: var(--v2-s-8);
+}
+.v2-hero-bg__microstats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--v2-s-5);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding-top: var(--v2-s-5);
+}
+.v2-hero-bg__microstat {
+  display: flex;
+  align-items: baseline;
+  gap: var(--v2-s-2);
+}
+.v2-hero-bg__microstat + .v2-hero-bg__microstat {
+  padding-left: var(--v2-s-5);
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+.v2-hero-bg__microstat-label {
+  font-family: var(--v2-font-mono);
+  font-size: var(--v2-fs-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.6);
+}
+.v2-hero-bg__microstat-value {
+  font-family: var(--v2-font-display);
+  font-size: var(--v2-fs-h4);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ── SOBRE v2.1 con foto + chip ───────────────────────────────────────── */
+.v2-sobre__photo-wrap {
+  position: relative;
+}
+.v2-sobre__photo {
+  margin: 0;
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--v2-line);
+  border-radius: var(--v2-radius-sm);
+  overflow: hidden;
+  background: var(--v2-surface);
+}
+.v2-sobre__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.v2-sobre__chip {
+  position: absolute;
+  left: var(--v2-s-4);
+  bottom: var(--v2-s-4);
+  background: var(--v2-surface);
+  border: 1px solid var(--v2-line);
+  font-family: var(--v2-font-mono);
+  font-size: var(--v2-fs-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--v2-ink);
+  padding: 8px 12px;
+  border-radius: var(--v2-radius-xs);
+  font-weight: 500;
+}
+.v2-sobre__title em {
+  font-style: italic;
+  color: var(--v2-primary);
+  font-weight: 600;
+  background: none;
+  padding: 0;
+}
+.v2-sobre__body .v2-link-mono { margin-top: var(--v2-s-5); display: inline-flex; }
+
+/* ── ÁREAS v2.1: card destacada navy + icono SVG ──────────────────────── */
+.v2-card-area__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--v2-line);
+  border-radius: var(--v2-radius-sm);
+  color: var(--v2-primary);
+  background: var(--v2-bg);
+  transition: color var(--v2-dur-base) var(--v2-ease-out),
+              border-color var(--v2-dur-base) var(--v2-ease-out);
+}
+.v2-card-area__icon svg { width: 22px; height: 22px; }
+
+.v2-card-area--feature {
+  background: var(--v2-primary);
+  color: #fff;
+  border-color: var(--v2-primary);
+}
+.v2-card-area--feature .v2-card-area__title,
+.v2-card-area--feature .v2-card-area__cta {
+  color: #fff;
+}
+.v2-card-area--feature .v2-card-area__desc { color: rgba(255, 255, 255, 0.78); }
+.v2-card-area--feature .v2-card-area__icon {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--v2-accent);
+}
+.v2-card-area--feature .v2-card-area__cta {
+  border-top-color: rgba(255, 255, 255, 0.2);
+  color: var(--v2-accent);
+}
+.v2-card-area--feature:hover {
+  background: var(--v2-primary-2);
+  border-color: var(--v2-primary-2);
+  transform: translateY(-2px);
+  box-shadow: var(--v2-shadow-card-hover);
+}
+
+/* ── HABLEMOS v2.1: split 5/7 con form a la derecha ───────────────────── */
+.v2-hablemos__grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: var(--v2-s-8);
+  align-items: start;
+}
+@media (max-width: 900px) { .v2-hablemos__grid { grid-template-columns: 1fr; } }
+
+.v2-hablemos__title {
+  font-family: var(--v2-font-display);
+  font-size: var(--v2-fs-h2);
+  font-weight: 700;
+  line-height: var(--v2-lh-snug);
+  letter-spacing: var(--v2-tracking-display);
+  color: var(--v2-ink);
+  margin: var(--v2-s-3) 0 var(--v2-s-5) 0;
+}
+.v2-hablemos__title em {
+  font-style: italic;
+  color: var(--v2-primary);
+  font-weight: 700;
+}
+.v2-hablemos__lead {
+  font-family: var(--v2-font-sans);
+  font-size: var(--v2-fs-lead);
+  line-height: 1.55;
+  color: var(--v2-ink-soft);
+  margin: 0 0 var(--v2-s-7) 0;
+  max-width: 38ch;
+}
+.v2-hablemos__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--v2-s-4) 0;
+  text-decoration: none;
+  border-top: 1px solid var(--v2-line);
+  color: var(--v2-ink);
+  transition: padding-left var(--v2-dur-fast) var(--v2-ease-out);
+}
+.v2-hablemos__contact:hover { padding-left: var(--v2-s-2); }
+.v2-hablemos__contact:last-child { border-bottom: 1px solid var(--v2-line); }
+.v2-hablemos__contact-label {
+  font-family: var(--v2-font-mono);
+  font-size: var(--v2-fs-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--v2-muted);
+}
+.v2-hablemos__contact-value {
+  font-family: var(--v2-font-mono);
+  font-size: var(--v2-fs-h5);
+  font-weight: 500;
+  color: var(--v2-ink);
+}
+.v2-hablemos__form-card {
+  background: var(--v2-surface);
+  border: 1px solid var(--v2-line);
+  border-radius: var(--v2-radius-sm);
+  padding: var(--v2-s-7) var(--v2-s-6);
+}
+@media (max-width: 700px) {
+  .v2-hablemos__form-card { padding: var(--v2-s-5) var(--v2-s-4); }
+}
+
+/* ── RESEÑAS v2.1: placeholders dashed ────────────────────────────────── */
+.v2-review--placeholder {
+  border: 1px dashed var(--v2-line-strong);
+  background: transparent;
+}
+.v2-review--placeholder .v2-review__head {
+  color: var(--v2-muted);
+}
+.v2-review__quote--placeholder {
+  font-family: var(--v2-font-mono);
+  font-size: var(--v2-fs-meta);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--v2-muted-strong);
+  font-style: normal;
+}
+.v2-review--placeholder .v2-review__sign {
+  font-family: var(--v2-font-mono);
+  font-size: var(--v2-fs-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--v2-muted);
+  border-top-color: var(--v2-line-strong);
+  border-top-style: dashed;
+}
+
+/* ── Tipografía display global v2.1 (override de partials que usaban serif) ── */
+.v2-section__title,
+.v2-sobre__title,
+.v2-cta-hablemos__title,
+.v2-leadmagnet__title {
+  font-family: var(--v2-font-display);
+  font-weight: 700;
+  letter-spacing: var(--v2-tracking-display);
+}
+
+/* Buttons v2.1 (heredan v2 — ajuste: inverse-ghost mejor contraste) */
+.v2-btn--inverse-ghost {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.v2-btn--inverse-ghost:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #fff;
+}
+

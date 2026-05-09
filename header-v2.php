@@ -13,9 +13,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<meta name="theme-color" content="#FAF7F0">
 
-	<?php // Preload sólo de las fuentes críticas para LCP en home: Fraunces 700 (H1) e Inter 500 (UI). ?>
-	<link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/fonts/fraunces/fraunces-latin-700-normal.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/fonts/inter/inter-latin-500-normal.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
+	<?php // Preload Inter 600 (display) + hero bg WebP — críticos para LCP. ?>
+	<link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/fonts/inter/inter-latin-600-normal.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
+	<link rel="preload"
+	      href="<?php echo esc_url( get_template_directory_uri() . '/assets/img/hero/madrid-granvia-1280.webp' ); ?>"
+	      as="image"
+	      type="image/webp"
+	      imagesrcset="<?php echo esc_url( get_template_directory_uri() . '/assets/img/hero/madrid-granvia-720.webp' ); ?> 720w, <?php echo esc_url( get_template_directory_uri() . '/assets/img/hero/madrid-granvia-1280.webp' ); ?> 1280w, <?php echo esc_url( get_template_directory_uri() . '/assets/img/hero/madrid-granvia.webp' ); ?> 1920w"
+	      imagesizes="100vw"
+	      fetchpriority="high">
 
 	<?php wp_head(); ?>
 </head>
@@ -26,9 +32,7 @@
 
 <div class="v2-home no-js">
 
-	<?php get_template_part( 'patterns/top-strip-v2' ); ?>
-
-	<header class="v2-header" role="banner">
+	<header class="v2-header v2-header--solid" role="banner">
 		<div class="v2-container v2-header__inner">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="v2-header__logo" aria-label="Remedios Morillo · Inicio">
 				<?php morillo_logo( 200, 'navy' ); ?>
@@ -67,29 +71,29 @@
 		<div id="v2-megamenu-areas" class="v2-megamenu" role="menu" aria-label="<?php esc_attr_e( 'Áreas de práctica', 'morillo' ); ?>">
 			<div class="v2-megamenu__grid">
 				<div class="v2-megamenu__col">
-					<h4>[Insolvencia]</h4>
+					<p class="v2-megamenu__col-label">[Insolvencia]</p>
 					<a href="<?php echo esc_url( home_url( '/ley-de-segunda-oportunidad/' ) ); ?>"><?php esc_html_e( 'Ley de Segunda Oportunidad', 'morillo' ); ?></a>
 				</div>
 				<div class="v2-megamenu__col">
-					<h4>[Bancario]</h4>
+					<p class="v2-megamenu__col-label">[Bancario]</p>
 					<a href="<?php echo esc_url( home_url( '/derecho-bancario/' ) ); ?>"><?php esc_html_e( 'Derecho Bancario', 'morillo' ); ?></a>
 					<a href="<?php echo esc_url( home_url( '/reclamar-tarjetas-revolving/' ) ); ?>"><?php esc_html_e( 'Tarjetas revolving', 'morillo' ); ?></a>
 					<a href="<?php echo esc_url( home_url( '/gastos-hipotecarios-2/' ) ); ?>"><?php esc_html_e( 'Gastos hipotecarios', 'morillo' ); ?></a>
 				</div>
 				<div class="v2-megamenu__col">
-					<h4>[Mercantil]</h4>
+					<p class="v2-megamenu__col-label">[Mercantil]</p>
 					<a href="<?php echo esc_url( home_url( '/derecho-mercantil/' ) ); ?>"><?php esc_html_e( 'Derecho Mercantil', 'morillo' ); ?></a>
 					<a href="<?php echo esc_url( home_url( '/contratos-mercantiles-malaga/' ) ); ?>"><?php esc_html_e( 'Contratos mercantiles', 'morillo' ); ?></a>
 					<a href="<?php echo esc_url( home_url( '/concurso-de-acreedores/' ) ); ?>"><?php esc_html_e( 'Concurso de acreedores', 'morillo' ); ?></a>
 				</div>
 				<div class="v2-megamenu__col">
-					<h4>[Civil]</h4>
+					<p class="v2-megamenu__col-label">[Civil]</p>
 					<a href="<?php echo esc_url( home_url( '/derecho-civil/' ) ); ?>"><?php esc_html_e( 'Derecho Civil', 'morillo' ); ?></a>
 					<a href="<?php echo esc_url( home_url( '/herencias-malaga/' ) ); ?>"><?php esc_html_e( 'Herencias', 'morillo' ); ?></a>
 					<a href="<?php echo esc_url( home_url( '/desahucios-y-arrendamientos-madrid/' ) ); ?>"><?php esc_html_e( 'Desahucios', 'morillo' ); ?></a>
 				</div>
 				<div class="v2-megamenu__col">
-					<h4>[Penal]</h4>
+					<p class="v2-megamenu__col-label">[Penal]</p>
 					<a href="<?php echo esc_url( home_url( '/derecho-penal/' ) ); ?>"><?php esc_html_e( 'Derecho Penal', 'morillo' ); ?></a>
 					<a href="<?php echo esc_url( home_url( '/ocupaciones-ilegales-madrid/' ) ); ?>"><?php esc_html_e( 'Ocupaciones ilegales', 'morillo' ); ?></a>
 					<a href="<?php echo esc_url( home_url( '/gestion-de-patrimonio/' ) ); ?>"><?php esc_html_e( 'Gestión de Patrimonio', 'morillo' ); ?></a>

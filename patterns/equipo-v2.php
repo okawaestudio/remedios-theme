@@ -14,7 +14,7 @@ $team = array(
 	<div class="v2-container">
 		<header class="v2-section__head">
 			<div>
-				<span class="v2-eyebrow">[05 — EL EQUIPO]</span>
+				<span class="v2-eyebrow">EL EQUIPO</span>
 				<h2 class="v2-section__title">Personas reales al otro lado<br>del expediente.</h2>
 			</div>
 		</header>
