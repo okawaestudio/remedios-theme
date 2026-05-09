@@ -7,7 +7,11 @@ defined( 'ABSPATH' ) || exit;
 		<div class="v2-footer__grid">
 
 			<div>
-				<h4>[REMEDIOS MORILLO ABOGADOS]</h4>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="v2-footer__logo" aria-label="Remedios Morillo · Inicio">
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/brand/logo-faldon-cream.svg' ); ?>"
+					     alt="Remedios Morillo Abogados"
+					     width="220" height="57" loading="lazy">
+				</a>
 				<p class="v2-footer__brand-tag">
 					Defensa especializada en Ley de Segunda Oportunidad y derecho bancario.
 					Madrid · Málaga.

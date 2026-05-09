@@ -69,6 +69,10 @@ $bg_webp_sm = $theme_uri . '/assets/img/hero/madrid-granvia-720.webp';
 					<input type="tel" id="hf-tel" name="hf_tel" placeholder="Teléfono" required>
 				</div>
 				<div class="v2-hero-form__field">
+					<label for="hf-email" class="screen-reader-text">Email</label>
+					<input type="email" id="hf-email" name="hf_email" placeholder="Email" required>
+				</div>
+				<div class="v2-hero-form__field">
 					<label for="hf-importe" class="screen-reader-text">Importe aproximado de deuda</label>
 					<select id="hf-importe" name="hf_importe" required>
 						<option value="">Importe aproximado de deuda</option>
@@ -78,6 +82,10 @@ $bg_webp_sm = $theme_uri . '/assets/img/hero/madrid-granvia-720.webp';
 						<option value=">100000">Más de 100.000 €</option>
 					</select>
 				</div>
+				<label class="v2-hero-form__checkbox">
+					<input type="checkbox" name="hf_acepto" required>
+					<span>Acepto la <a href="<?php echo esc_url( home_url( '/politica-de-privacidad/' ) ); ?>">política de privacidad</a>.</span>
+				</label>
 				<button type="submit" class="v2-btn v2-btn--primary v2-btn--block v2-hero-form__submit">
 					Pedir consulta gratuita
 					<span class="v2-arrow" aria-hidden="true">→</span>

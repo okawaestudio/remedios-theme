@@ -1,5 +1,54 @@
 # CHANGELOG
 
+## [v2.3-home] · 2026-05-09 — Hero compacto + form 4 campos + logo footer
+
+5 ajustes acumulativos sobre `v2.2-home`:
+
+### Hero más compacto
+- `--v2-fs-h1`: clamp max bajado de **4.25rem → 3.5rem**. H1 pasa de
+  4 líneas a 3.
+- Hero `padding-block`: `clamp(6rem, 12vw, 12rem) → clamp(4rem, 7vw, 6.5rem)`.
+- `min-height: 600px` ELIMINADO (la altura sigue al contenido).
+
+### Form hero · 4 campos + checkbox + más translúcido
+- Añadido **email** entre teléfono e importe.
+- Añadido **checkbox de política de privacidad** antes del submit.
+- Background opacidad bajada de **0.96 → 0.78** + blur subido de
+  `blur(10px) → blur(16px)` para mantener legibilidad. Ahora se ve la
+  foto Madrid detrás (efecto "vidrio escarchado").
+- Inputs height `46px → 42px` (más compacto, cabe el 5º campo).
+- Stack gap `14px → 10px`.
+- Padding card: `28px 28px 24px → 24px 24px 22px`.
+
+### Header phone · botón pill ghost
+- Antes: `[634 717 166]` con border hairline simple, sin padding consistente.
+- Ahora: pill ghost (height 40px, radius 999, border line-strong, ícono ☎
+  con `::before`). Hover: bg navy, color cream.
+- Quitados los corchetes `[...]` del texto.
+
+### Logo en footer · SVG faldón
+- SVG `remedios_morillo_aboagada (1).svg` copiado a
+  `assets/img/brand/logo-faldon-cream.svg` (11.5 KB).
+- Logo blanco horizontal (viewBox 984.5×255.95) → perfecto para fondo
+  navy del footer.
+- Sustituye al título de texto `[REMEDIOS MORILLO ABOGADOS]` que había
+  antes en la columna brand del footer.
+- Width 220px responsive.
+
+### Métricas Lighthouse v2.3 (LocalWP HTTP)
+
+| Categoría | Mobile | Desktop | Δ vs v2.2 |
+|---|---:|---:|---|
+| Performance | **94** | **100** | +4 / = |
+| Accessibility | 94 | 94 | = |
+| Best Practices | 78 | 78 | = |
+| SEO | 92 | 92 | = |
+
+Mobile sube +4 al haber bajado el LCP del hero (menos altura = menos
+viewport para pintar antes del paint final).
+
+---
+
 ## [v2.2-home] · 2026-05-09 — Plus Jakarta Sans + UI moderna + rhythm de bloques
 
 Iteración acumulativa sobre `v2.1-home`. Brief del cliente (acotado):

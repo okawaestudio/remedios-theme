@@ -56,7 +56,7 @@
 
 			<div class="v2-header__actions">
 				<a href="tel:<?php echo esc_attr( MORILLO_PHONE_RAW ); ?>" class="v2-header__phone" aria-label="<?php esc_attr_e( 'Llamar ahora', 'morillo' ); ?>">
-					[<?php echo esc_html( MORILLO_PHONE ); ?>]
+					<?php echo esc_html( MORILLO_PHONE ); ?>
 				</a>
 				<a href="<?php echo esc_url( home_url( '/contacto/' ) ); ?>" class="v2-btn v2-btn--primary">
 					<?php esc_html_e( 'Consulta gratuita', 'morillo' ); ?>

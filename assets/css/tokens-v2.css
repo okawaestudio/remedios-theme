@@ -127,7 +127,7 @@
   --v2-fs-h4:      clamp(1.25rem, 1rem + 1vw, 1.5rem);
   --v2-fs-h3:      clamp(1.5rem, 1.1rem + 1.5vw, 2rem);
   --v2-fs-h2:      clamp(2rem, 1.3rem + 2.8vw, 3rem);
-  --v2-fs-h1:      clamp(2.5rem, 1.4rem + 4vw, 4.25rem);
+  --v2-fs-h1:      clamp(2.25rem, 1.3rem + 3vw, 3.5rem);
   --v2-fs-display: clamp(3rem, 1.5rem + 6vw, 6rem);
 
   --v2-lh-tight:   1.05;

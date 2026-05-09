@@ -1373,17 +1373,16 @@
   -webkit-backdrop-filter: blur(8px) saturate(140%);
 }
 
-/* ── HERO v2.1 full-bleed Madrid ──────────────────────────────────────── */
+/* ── HERO v2.3 full-bleed Madrid (más compacto) ──────────────────────── */
 .v2-hero-bg {
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  padding-block: clamp(6rem, 12vw, 12rem);
+  padding-block: clamp(4rem, 7vw, 6.5rem);
   display: flex;
   align-items: center;
   justify-content: center;
   isolation: isolate;
-  min-height: 600px;
   overflow: hidden;
 }
 .v2-hero-bg__picture {
@@ -1827,15 +1826,15 @@
   font-feature-settings: "tnum";
 }
 
-/* ── Hero form card sutil (NUEVO v2.2) ─────────────────────────────── */
+/* ── Hero form card v2.3 — más translúcido (deja ver Madrid detrás) ── */
 .v2-home .v2-hero-form {
-  background: rgba(253, 252, 250, 0.96);
-  backdrop-filter: blur(10px) saturate(140%);
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(253, 252, 250, 0.78);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-top: 3px solid var(--v2-primary);
   border-radius: var(--v2-radius-md);
-  padding: 28px 28px 24px;
+  padding: 24px 24px 22px;
   box-shadow: var(--v2-shadow-form);
   color: var(--v2-ink);
   max-width: 380px;
@@ -1911,6 +1910,30 @@
   text-align: center;
   margin: 12px 0 0;
 }
+.v2-home .v2-hero-form__checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-family: var(--v2-font-display);
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--v2-ink-soft);
+  margin-top: 4px;
+}
+.v2-home .v2-hero-form__checkbox input {
+  margin-top: 3px;
+  accent-color: var(--v2-primary);
+  flex-shrink: 0;
+}
+.v2-home .v2-hero-form__checkbox a {
+  color: var(--v2-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.v2-home .v2-hero-form__checkbox a:hover { color: var(--v2-primary-2); }
+.v2-home .v2-hero-form__stack { gap: 10px; }
+.v2-home .v2-hero-form__field input,
+.v2-home .v2-hero-form__field select { height: 42px; font-size: 14px; }
 
 /* ── Equipo cards v2.2: rediseño moderno ────────────────────────────── */
 .v2-home .v2-team-card {
@@ -2103,13 +2126,48 @@
   text-transform: uppercase;
   letter-spacing: var(--v2-tracking-eyebrow);
 }
+.v2-home .v2-footer__logo {
+  display: inline-block;
+  margin-bottom: var(--v2-s-4);
+}
+.v2-home .v2-footer__logo img {
+  width: 220px;
+  height: auto;
+  display: block;
+}
 
 /* ── Header v2.2: tipografía Jakarta ───────────────────────────── */
 .v2-home .v2-header__phone {
   font-family: var(--v2-font-display);
   font-weight: 600;
   font-feature-settings: "tnum";
+  /* v2.3: estilo botón pill ghost */
+  height: 40px;
+  padding: 0 16px;
+  border-radius: var(--v2-radius-pill);
+  border: 1px solid var(--v2-line-strong);
+  background: transparent;
+  color: var(--v2-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: border-color var(--v2-dur-fast) var(--v2-ease-out),
+              background var(--v2-dur-fast) var(--v2-ease-out),
+              color var(--v2-dur-fast) var(--v2-ease-out);
 }
+.v2-home .v2-header__phone::before {
+  content: "☎";
+  font-size: 13px;
+  opacity: 0.7;
+}
+.v2-home .v2-header__phone:hover {
+  border-color: var(--v2-primary);
+  background: var(--v2-primary);
+  color: var(--v2-bg);
+}
+.v2-home .v2-header__phone:hover::before { opacity: 1; }
 .v2-home .v2-nav__list a,
 .v2-home .v2-nav__list button {
   font-family: var(--v2-font-display);
