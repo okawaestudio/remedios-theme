@@ -25,7 +25,7 @@ $pasos = array(
 	),
 );
 ?>
-<section class="v2-section v2-section--cream v2-proceso">
+<section class="v2-section v2-section--mist v2-proceso">
 	<div class="v2-container">
 		<header class="v2-proceso__head">
 			<div class="v2-proceso__title-wrap">
