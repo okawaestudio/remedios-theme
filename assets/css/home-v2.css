@@ -194,7 +194,16 @@
   color: var(--v2-ink);
   text-decoration: none;
 }
-.v2-header__logo svg, .v2-header__logo img { height: 32px; width: auto; }
+.v2-header__logo svg,
+.v2-header__logo img,
+.v2-header__logo picture { height: 48px; width: auto; }
+.v2-header__logo picture { display: inline-block; }
+.v2-header__logo picture img { height: 100%; width: auto; display: block; }
+@media (max-width: 700px) {
+  .v2-header__logo svg,
+  .v2-header__logo img,
+  .v2-header__logo picture { height: 38px; }
+}
 
 .v2-nav {
   display: flex;

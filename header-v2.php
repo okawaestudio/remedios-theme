@@ -35,7 +35,12 @@
 	<header class="v2-header v2-header--solid" role="banner">
 		<div class="v2-container v2-header__inner">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="v2-header__logo" aria-label="Remedios Morillo · Inicio">
-				<?php morillo_logo( 200, 'navy' ); ?>
+				<picture>
+					<source type="image/webp" srcset="<?php echo esc_url( get_template_directory_uri() . '/assets/img/brand/logo-horizontal.webp' ); ?>">
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/brand/logo-horizontal.png' ); ?>"
+					     alt="Remedios Morillo · Abogados"
+					     width="200" height="40" decoding="async">
+				</picture>
 			</a>
 
 			<nav class="v2-nav" aria-label="<?php esc_attr_e( 'Menú principal', 'morillo' ); ?>">
