@@ -1,0 +1,20 @@
+{
+  "name": "morillo-theme",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Tema editorial para el despacho Remedios Morillo Abogados — sistema home-v2 (Tailscale-style).",
+  "scripts": {
+    "vendor:motion": "cp node_modules/motion/dist/motion.js assets/js/vendor/motion.js",
+    "build": "npm run vendor:motion"
+  },
+  "dependencies": {
+    "motion": "^12.0.0"
+  },
+  "devDependencies": {
+    "@fontsource/fraunces": "^5.2.9",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "lighthouse": "^13.3.0",
+    "playwright": "^1.59.1"
+  }
+}

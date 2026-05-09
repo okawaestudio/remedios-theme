@@ -1,0 +1,75 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "appearanceTools": false,
+    "useRootPaddingAwareAlignments": true,
+    "color": {
+      "custom": false,
+      "customDuotone": false,
+      "customGradient": false,
+      "defaultPalette": false,
+      "palette": [
+        { "slug": "v2-bg",          "color": "#FAF7F0", "name": "Cream (fondo)" },
+        { "slug": "v2-surface",     "color": "#FFFFFF", "name": "Blanco superficie" },
+        { "slug": "v2-surface-alt", "color": "#F2EBDD", "name": "Cream banda" },
+        { "slug": "v2-ink",         "color": "#0E1320", "name": "Tinta" },
+        { "slug": "v2-ink-soft",    "color": "#2A3142", "name": "Tinta suave" },
+        { "slug": "v2-muted",       "color": "#6B7280", "name": "Muted" },
+        { "slug": "v2-primary",     "color": "#162542", "name": "Marca · Navy" },
+        { "slug": "v2-primary-2",   "color": "#243559", "name": "Marca · Navy hover" },
+        { "slug": "v2-accent",      "color": "#B8884B", "name": "Dorado acento" },
+        { "slug": "v2-accent-soft", "color": "#E5D6B8", "name": "Dorado suave" },
+        { "slug": "v2-line",        "color": "#E8E1D4", "name": "Línea hairline" }
+      ]
+    },
+    "typography": {
+      "customFontSize": false,
+      "dropCap": false,
+      "fluid": true,
+      "fontFamilies": [
+        {
+          "slug": "v2-serif",
+          "name": "Fraunces (display)",
+          "fontFamily": "Fraunces, 'Source Serif 4', Georgia, serif"
+        },
+        {
+          "slug": "v2-sans",
+          "name": "Inter (body)",
+          "fontFamily": "InterV2, 'Söhne', system-ui, -apple-system, sans-serif"
+        },
+        {
+          "slug": "v2-mono",
+          "name": "JetBrains Mono (meta)",
+          "fontFamily": "JBMono, ui-monospace, 'SFMono-Regular', monospace"
+        }
+      ],
+      "fontSizes": [
+        { "slug": "v2-eyebrow", "name": "Eyebrow",    "size": "0.75rem" },
+        { "slug": "v2-meta",    "name": "Meta",       "size": "0.8125rem" },
+        { "slug": "v2-body",    "name": "Body",       "size": "1rem" },
+        { "slug": "v2-lead",    "name": "Lead",       "size": "clamp(1.0625rem, 0.9rem + 0.6vw, 1.25rem)", "fluid": false },
+        { "slug": "v2-h3",      "name": "H3",         "size": "clamp(1.5rem, 1.1rem + 1.5vw, 2rem)",        "fluid": false },
+        { "slug": "v2-h2",      "name": "H2",         "size": "clamp(2rem, 1.3rem + 2.8vw, 3.25rem)",       "fluid": false },
+        { "slug": "v2-h1",      "name": "H1",         "size": "clamp(2.75rem, 1.6rem + 4.6vw, 5rem)",       "fluid": false },
+        { "slug": "v2-display", "name": "Display",    "size": "clamp(3.5rem, 2rem + 7vw, 7rem)",            "fluid": false }
+      ]
+    },
+    "spacing": {
+      "customSpacingSize": false,
+      "spacingSizes": [
+        { "slug": "v2-3", "name": "12px", "size": "12px" },
+        { "slug": "v2-4", "name": "16px", "size": "16px" },
+        { "slug": "v2-5", "name": "24px", "size": "24px" },
+        { "slug": "v2-6", "name": "32px", "size": "32px" },
+        { "slug": "v2-7", "name": "48px", "size": "48px" },
+        { "slug": "v2-8", "name": "64px", "size": "64px" },
+        { "slug": "v2-9", "name": "96px", "size": "96px" }
+      ]
+    },
+    "layout": {
+      "contentSize": "880px",
+      "wideSize": "1200px"
+    }
+  }
+}
