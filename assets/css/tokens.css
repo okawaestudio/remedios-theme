@@ -1,0 +1,172 @@
+/**
+ * tokens.css — Design system canónico (Morillo)
+ *
+ * Fuente única de verdad para color, tipografía, espaciado, layout, radii,
+ * sombras, motion y focus. Se carga ANTES que main.css (dependencia en wp_enqueue).
+ *
+ * Reglas:
+ *   - Si necesitas un valor visual nuevo, añádelo aquí primero como token.
+ *   - main.css NO redefine estos tokens (solo los consume).
+ *   - Los alias legacy (--sans, --navy, --line) existen para no romper código antiguo.
+ */
+
+:root {
+  /* ============================================================
+     COLOR
+     ============================================================ */
+
+  /* Superficies */
+  --paper:        #ffffff;
+  --paper-2:      #f7f8fa;
+  --paper-warm:   #f4f5f8;
+  --paper-3:      #eef0f4;
+
+  /* Tinta (texto) */
+  --ink:          #0f1d3d;
+  --ink-2:        rgba(15, 29, 61, 0.72);
+  --ink-3:        rgba(15, 29, 61, 0.55);
+  --ink-4:        rgba(15, 29, 61, 0.30);
+
+  /* Brand */
+  --blue:         #1863DC;
+  --accent-soft:  #1e3a8a;
+
+  /* Bordes / líneas */
+  --rule:         rgba(15, 29, 61, 0.10);
+  --rule-strong:  rgba(15, 29, 61, 0.18);
+
+  /* Aliases legacy (no romper selectores existentes) */
+  --navy:         var(--ink);
+  --line:         var(--rule);
+  --line-strong:  var(--rule-strong);
+  --ink-soft:     var(--ink-2);
+  --ink-mute:     var(--ink-3);
+
+  /* ============================================================
+     TIPOGRAFÍA
+     ============================================================ */
+
+  --font-sans:    "Inter Tight", -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Aliases legacy */
+  --sans:         var(--font-sans);
+  --serif:        var(--font-sans);  /* el "serif" original era Inter Tight; alias para no romper */
+  --mono:         var(--font-mono);
+  --font:         var(--font-sans);
+
+  /* Escala fluida — basada en el patrón del hero home */
+  --fs-display:    clamp(34px, 5.4vw, 64px);
+  --fs-section:    clamp(28px, 3.6vw, 44px);
+  --fs-sub:        clamp(22px, 2.4vw, 28px);
+  --fs-lead:       clamp(15px, 1.4vw, 17px);
+  --fs-body:       16px;
+  --fs-small:      14px;
+  --fs-micro:      13px;
+  --fs-eyebrow:    11px;
+
+  /* Pesos canónicos */
+  --fw-regular:    400;
+  --fw-medium:     500;
+  --fw-semibold:   600;
+  --fw-bold:       700;
+
+  /* Tracking */
+  --ls-display:   -0.035em;
+  --ls-section:   -0.025em;
+  --ls-tight:     -0.01em;
+  --ls-normal:     0;
+  --ls-eyebrow:    0.16em;
+
+  /* Line heights */
+  --lh-display:    1.05;
+  --lh-section:    1.12;
+  --lh-body:       1.55;
+  --lh-prose:      1.65;
+
+  /* ============================================================
+     ESPACIADO (escala 4/8)
+     ============================================================ */
+
+  --space-1:       4px;
+  --space-2:       8px;
+  --space-3:       12px;
+  --space-4:       16px;
+  --space-5:       20px;
+  --space-6:       24px;
+  --space-8:       32px;
+  --space-10:      40px;
+  --space-12:      48px;
+  --space-16:      64px;
+  --space-20:      80px;
+  --space-24:      96px;
+
+  /* Padding canónicos de sección */
+  --pad-x:         clamp(20px, 4vw, 40px);
+  --pad-y:         clamp(72px, 9vw, 128px);
+  --pad-y-sm:     clamp(48px, 6vw, 80px);
+
+  /* ============================================================
+     LAYOUT
+     ============================================================ */
+
+  --container:         1240px;
+  --container-narrow:   760px;
+
+  /* Breakpoints (referencia; las @media siguen siendo literales) */
+  --bp-sm:  600px;
+  --bp-md:  900px;
+  --bp-lg:  1100px;
+  --bp-xl:  1280px;
+
+  /* ============================================================
+     RADII
+     ============================================================ */
+
+  --r-sm:    8px;
+  --r-md:   14px;
+  --r-lg:   20px;
+  --r-xl:   28px;
+  --r-full: 999px;
+
+  /* ============================================================
+     SOMBRAS
+     ============================================================ */
+
+  --shadow-soft: 0 1px 3px rgba(15,29,61,0.04), 0 6px 18px -8px rgba(15,29,61,0.10);
+  --shadow-md:   0 8px 24px -10px rgba(15,29,61,0.18), 0 3px 8px rgba(15,29,61,0.06);
+  --shadow-lg:   0 30px 80px -24px rgba(15,29,61,0.32), 0 12px 24px -8px rgba(15,29,61,0.10);
+
+  /* ============================================================
+     MOTION
+     ============================================================ */
+
+  --ease:    cubic-bezier(0.4, 0, 0.2, 1);
+  --t-fast:  0.18s;
+  --t-base:  0.32s;
+  --t-slow:  0.6s;
+
+  /* ============================================================
+     FOCUS / A11y
+     ============================================================ */
+
+  --focus-color:   var(--blue);
+  --focus-ring:    0 0 0 3px rgba(24, 99, 220, 0.35);
+}
+
+/* Focus visible accesible global (mejora #8 del plan) */
+*:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Respeto a la preferencia del usuario por menos animación */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
