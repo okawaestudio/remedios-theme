@@ -13,7 +13,7 @@ $placeholders = array(
 	array( 'cat' => 'GOOGLE',  'note' => 'Pendiente sincronizar con Google My Business' ),
 );
 ?>
-<section class="v2-section">
+<section class="v2-section v2-section--cream-2">
 	<div class="v2-container">
 		<header class="v2-section__head">
 			<div>

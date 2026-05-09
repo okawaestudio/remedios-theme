@@ -42,26 +42,16 @@ add_action( 'wp_enqueue_scripts', function () {
 		file_exists( $home_v2_path ) ? filemtime( $home_v2_path ) : MORILLO_VERSION
 	);
 
-	// Motion One (vendored UMD) — opcional, sólo si se va a usar para animaciones avanzadas.
-	// Por defecto el sistema usa CSS transitions + IntersectionObserver, no Motion.
-	// Lo dejamos cargado por si se quiere extender.
-	$motion_path = $theme_path . '/assets/js/vendor/motion.js';
-	if ( file_exists( $motion_path ) ) {
-		wp_enqueue_script(
-			'morillo-motion',
-			$theme_uri . '/assets/js/vendor/motion.js',
-			array(),
-			filemtime( $motion_path ),
-			array( 'in_footer' => true, 'strategy' => 'defer' )
-		);
-	}
+	// Motion One vendored — DESACTIVADO en v2.2 porque no lo usa nadie.
+	// Si en el futuro algún partial necesita springs avanzados, re-enqueue
+	// condicionalmente desde el partial mediante wp_enqueue_script aquí.
 
-	// home-v2.js (depende de motion)
+	// home-v2.js — sin dependencia de motion (solo CSS transitions + IO).
 	$js_v2_path = $theme_path . '/assets/js/home-v2.js';
 	wp_enqueue_script(
 		'morillo-home-v2',
 		$theme_uri . '/assets/js/home-v2.js',
-		array( 'morillo-motion' ),
+		array(),
 		file_exists( $js_v2_path ) ? filemtime( $js_v2_path ) : MORILLO_VERSION,
 		array( 'in_footer' => true, 'strategy' => 'defer' )
 	);

@@ -1,5 +1,5 @@
 <?php
-/** EQUIPO v2 — grid 5 cards de equipo. */
+/** EQUIPO v2.2 — grid 5 cards modernas, foto destacada sin desaturate. */
 defined( 'ABSPATH' ) || exit;
 $theme_uri = get_template_directory_uri();
 $team = array(
@@ -10,7 +10,7 @@ $team = array(
 	array( 'name' => 'Daniel Barrios Jurado',       'role' => 'Marketing y desarrollo','img' => 'daniel.jpg',   'creds' => 'OKAWA STUDIO · COMUNICACIÓN' ),
 );
 ?>
-<section class="v2-section">
+<section class="v2-section v2-section--cream-2">
 	<div class="v2-container">
 		<header class="v2-section__head">
 			<div>
@@ -25,11 +25,13 @@ $team = array(
 						<img src="<?php echo esc_url( $theme_uri . '/assets/img/team/' . $p['img'] ); ?>"
 						     alt="<?php echo esc_attr( $p['name'] ); ?>"
 						     loading="lazy"
-						     width="400" height="400">
+						     width="400" height="500">
 					</div>
-					<h3 class="v2-team-card__name"><?php echo esc_html( $p['name'] ); ?></h3>
-					<p class="v2-team-card__role"><?php echo esc_html( $p['role'] ); ?></p>
-					<p class="v2-team-card__creds"><?php echo esc_html( $p['creds'] ); ?></p>
+					<div class="v2-team-card__body">
+						<h3 class="v2-team-card__name"><?php echo esc_html( $p['name'] ); ?></h3>
+						<p class="v2-team-card__role"><?php echo esc_html( $p['role'] ); ?></p>
+						<p class="v2-team-card__creds"><?php echo esc_html( $p['creds'] ); ?></p>
+					</div>
 				</article>
 			<?php endforeach; ?>
 		</div>

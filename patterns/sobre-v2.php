@@ -3,7 +3,7 @@
 defined( 'ABSPATH' ) || exit;
 $theme_uri = get_template_directory_uri();
 ?>
-<section class="v2-section">
+<section class="v2-section v2-section--white">
 	<div class="v2-container">
 		<div class="v2-sobre__grid" data-animate="fade-up">
 			<div class="v2-sobre__photo-wrap">

@@ -13,10 +13,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<meta name="theme-color" content="#FAF7F0">
 
-	<?php // Preload Inter 600 (display) + hero bg WebP — críticos para LCP. ?>
-	<link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/fonts/inter/inter-latin-600-normal.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
+	<?php // Preload Plus Jakarta Sans 600 (display crítico) + hero bg WebP. ?>
+	<link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/fonts/jakarta/plus-jakarta-sans-latin-600-normal.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
 	<link rel="preload"
-	      href="<?php echo esc_url( get_template_directory_uri() . '/assets/img/hero/madrid-granvia-1280.webp' ); ?>"
+	      href="<?php echo esc_url( get_template_directory_uri() . '/assets/img/hero/madrid-granvia-720.webp' ); ?>"
 	      as="image"
 	      type="image/webp"
 	      imagesrcset="<?php echo esc_url( get_template_directory_uri() . '/assets/img/hero/madrid-granvia-720.webp' ); ?> 720w, <?php echo esc_url( get_template_directory_uri() . '/assets/img/hero/madrid-granvia-1280.webp' ); ?> 1280w, <?php echo esc_url( get_template_directory_uri() . '/assets/img/hero/madrid-granvia.webp' ); ?> 1920w"

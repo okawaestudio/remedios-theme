@@ -2,7 +2,7 @@
 /** HABLEMOS v2.1 — split 5/7 con form integrado en card blanca a la derecha. */
 defined( 'ABSPATH' ) || exit;
 ?>
-<section class="v2-section v2-hablemos" id="contacto-home">
+<section class="v2-section v2-section--white v2-hablemos" id="contacto-home">
 	<div class="v2-container">
 		<div class="v2-hablemos__grid">
 			<div class="v2-hablemos__left">

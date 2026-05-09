@@ -1,5 +1,120 @@
 # CHANGELOG
 
+## [v2.2-home] · 2026-05-09 — Plus Jakarta Sans + UI moderna + rhythm de bloques
+
+Iteración acumulativa sobre `v2.1-home`. Brief del cliente (acotado):
+
+> "no me gusta JB Mono, soy más tipo Jakarta o similar, aspecto moderno;
+> las fotos del equipo y los botones no se ven bien, hay que actualizar el
+> diseño; el hero me gusta pero el title debe alinearse con el header
+> (mismo origen X que el logo) y meter un form sutil a la derecha como CTA
+> rápido; diferenciar los bloques: ahora todo es #FAF7F0 y no se distinguen."
+
+### Tipografía · Plus Jakarta Sans (única familia)
+
+- **JetBrains Mono ELIMINADO** (8 woff2 fuera, -64 KB).
+- **Inter Display alias ELIMINADO** + **Inter ELIMINADO** (8 woff2 fuera, -240 KB).
+- **Plus Jakarta Sans añadido**: weights 400/500/600/700, latin + latin-ext,
+  self-hosted en `assets/fonts/jakarta/` (8 woff2, 100 KB).
+- Tokens unificados:
+  - `--v2-font-display` = `--v2-font-sans` = `--v2-font-mono` = Jakarta.
+  - `--v2-tracking-eyebrow: 0.14em` (Jakarta uppercase pide tracking generoso).
+  - `--v2-tracking-display: -0.02em` (Jakarta semi-bold tight).
+- **Eyebrows ya NO van en mono** (`[01 — …]`, `[ICAM Nº …]`, `[200+ EXPEDIENTES]`):
+  ahora Jakarta uppercase 11px weight 600 con tracking 0.14em. Look más limpio
+  y menos "tech-corporate".
+- Preload: solo Jakarta 600.
+
+### Botones · pill modernos con jerarquía
+
+- Border-radius `var(--v2-radius-pill)` (999px) en lugar de 4px.
+- Heights consistentes: 48px default, 56px lg.
+- Variantes:
+  - `--primary` navy con hover `--primary-3` (más claro, no shift transform).
+  - `--ghost` outline hairline-strong con hover invertido (bg navy, texto cream).
+  - `--inverse` cream sobre fondos dark.
+  - `--inverse-ghost` outline blanco sobre fondos dark.
+  - `--mono` mantiene la clase pero ahora también es Jakarta con `font-feature-settings: tnum` para números tabulares.
+  - `--block` (full-width).
+  - `--lg` (height 56px, padding 28px).
+
+### Cards equipo · rediseño completo
+
+- Radius `--v2-radius-md` (12px) en lugar de 4px.
+- `overflow: hidden` para que la foto haga "bleed" hasta el borde.
+- Foto en wrapper con aspect 4/5, **sin `filter: saturate(.85)`** (las hacía
+  planas y desaturadas).
+- Hover: `transform: translateY(-4px)` + `box-shadow` + scale 1.04 en la foto.
+- Body wrapper `padding: 18px 20px 20px` con jerarquía:
+  - Nombre: serif 16.5px weight 600.
+  - Rol: 13px muted.
+  - Creds: separados por hairline arriba, 10.5px tracking 0.08em.
+
+### Hero · alineado con header + form sutil derecha (NUEVO)
+
+- `.v2-hero-bg__inner` ahora usa `width: var(--v2-container)` (igual que el
+  header). H1 alinea con logo en el mismo eje X.
+- Grid 1.4fr / 1fr (izq texto, der form). Mobile colapsa.
+- "Ley de Segunda Oportunidad" ahora en italic + color `#DCE7FB` (azul muy
+  claro) en lugar del dorado `--v2-accent` anterior.
+- **Form lateral nuevo `.v2-hero-form`**:
+  - Card max 380px, bg `rgba(253,252,250,0.96)` con `backdrop-filter: blur(10px)`.
+  - Border 1px white-translucent + border-top 3px navy accent.
+  - Sombra `0 24px 48px rgba(14,19,32,0.18)`.
+  - 3 campos: Nombre, Teléfono, Importe deuda (select).
+  - Submit pill primary full-width.
+  - Microcopy mono: "SIN COMPROMISO · CONFIDENCIAL".
+  - Honeypot anti-spam oculto. Action: `#contacto-home` (delegado al form
+    completo en sección Hablemos hasta conectar handler dedicado).
+
+### Backgrounds rhythm · diferenciar bloques
+
+Antes: TODO `#FAF7F0` → bloques no se distinguían.
+Ahora rhythm editorial alternando:
+
+| Bloque | Background v2.1 | Background v2.2 | Clase |
+|---|---|---|---|
+| Hero | navy + bg img | navy + bg img | (sin cambio) |
+| Sobre | cream | **white** | `v2-section--white` |
+| Áreas | cream | **cream** | `v2-section--cream` |
+| Equipo | cream | **cream-2 más cálido** `#F2EBDD` | `v2-section--cream-2` |
+| Hablemos | cream | **white** | `v2-section--white` |
+| Reseñas | cream | **cream-2 más cálido** | `v2-section--cream-2` |
+| Footer | navy | navy | (sin cambio) |
+
+Patrón: `dark · white · cream · cream-2 · white · cream-2 · dark`.
+
+Nuevos tokens de superficie:
+- `--v2-surface: #FFFFFF` (white limpio para bloques de "respiro").
+- `--v2-surface-alt: #F2EBDD` (cream cálido para banda equipo/reseñas).
+- `--v2-surface-mist: #EDF1F5` (cool blue-mist, disponible pero sin uso aún).
+
+### Performance recovery · Motion.js eliminado del enqueue
+
+- TBT mobile bajó de **3,710 ms → 0 ms** al desencolar `assets/js/vendor/motion.js`
+  (132 KB que nadie usa). Lo dejamos en disco como infraestructura para
+  cuando se necesite.
+- Performance mobile sube de v2.1 89 → v2.2 90 a pesar de añadir el form
+  hero (~1 KB extra HTML/CSS).
+- Preload del hero img cambia de `1280w` → `720w` (mejor para LCP mobile).
+
+### Métricas Lighthouse v2.2 (LocalWP HTTP)
+
+| Categoría | Mobile | Desktop | (Δ vs v2.1) |
+|---|---:|---:|---|
+| Performance | **90** | **100** | +1 / +1 |
+| Accessibility | 94 | 94 | = |
+| Best Practices | 78 | 78 | = |
+| SEO | 92 | 92 | = |
+
+| CWV | Mobile | Desktop |
+|---|---|---|
+| LCP | ~3.0 s | 0.8 s |
+| TBT | 0 ms | 0 ms |
+| CLS | 0 | 0 |
+
+---
+
 ## [v2.1-home-correcciones] · 2026-05-09 — Rollback a estructura staging
 
 Tras feedback del cliente, recuperamos la estructura de la home migrada

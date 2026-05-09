@@ -11,7 +11,7 @@ $areas = array(
 	array( 'icon' => 'penal',      'title' => 'Derecho Penal',              'href' => '/derecho-penal/',              'desc' => 'Defensa procesal, juicio rápido, ocupaciones ilegales y delitos económicos. Disponibilidad para urgencias.' ),
 );
 ?>
-<section class="v2-section">
+<section class="v2-section v2-section--cream">
 	<div class="v2-container">
 		<header class="v2-section__head">
 			<div>
