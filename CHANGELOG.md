@@ -1,5 +1,87 @@
 # CHANGELOG
 
+## [v2.4-home] · 2026-05-10 — Proceso + Casos + footer editorial + form refinado
+
+7 ajustes acumulativos sobre `v2.3-home` según brief del cliente:
+
+### 2 bloques recuperados con diseño nuevo
+
+**Proceso** (`patterns/proceso-v2.php`): timeline horizontal 4 pasos sobre
+bg cream. Header 2-col: H2 "De la primera llamada a la sentencia, *en 4 pasos*"
++ aside mono "¿Y mientras tanto? — te llamo yo". Cada step: dot navy 12px
+clavado en hairline horizontal hairline-strong, meta `0X · tiempo`,
+título serif-bold, descripción muted.
+
+**Casos públicos** (`patterns/casos-v2.php`): grid 3 cards sobre bg mist.
+Header 2-col: H2 "Casos resueltos. *Cifras reales*. Detalles públicos…" +
+btn ghost "Ver todos los casos →". Cada card: header (área en navy + ID
+en muted), cifra grande navy `87.420 €`, descripción, foot
+(juzgado · fecha) separado por hairline.
+
+`front-page.php` ahora orquesta 8 partials en el orden: hero · sobre ·
+áreas · **proceso** · equipo · **casos** · hablemos · reseñas · footer.
+
+### Logo header reducido
+
+`height` desktop `48px → 36px`, mobile `38px → 30px`. Mejor proporción.
+
+### Hablemos · garantías rediseñadas
+
+La línea suelta "Confidencial · sin compromiso · sin discurso comercial"
+del lead se sustituye por una `<ul>` de 3 garantías:
+
+- Confidencial
+- Sin compromiso
+- Sin coste si no hay viabilidad
+
+Cada item: pill check navy 22×22 (`<svg>` icono dentro) + texto Jakarta
+500 14.5px. La lista lleva borders top + bottom hairline para destacar
+como bloque de garantías propio.
+
+### Form Hablemos · provincia alineada + 52 provincias
+
+- `select#v2-provincia` ahora usa la misma estructura `.v2-field--select`
+  con label flotante (siempre arriba, color primary) en lugar del label
+  estático que estaba desalineado respecto al input email contiguo.
+- Custom appearance: chevron SVG inline como `background-image`, sin
+  `appearance: auto` (no nativo del browser).
+- Lista completa: **52 provincias** + Ceuta + Melilla en orden alfabético
+  (A Coruña, Álava, …, Zaragoza). Antes solo había 3 opciones (Madrid,
+  Málaga, Otra).
+
+### Footer rediseño editorial
+
+Reescrito de cero sobre `patterns/footer-v2.php` + reglas CSS dedicadas:
+
+- **Dos zonas claras** separadas por hairline blanco al .10 con margin
+  64px:
+  - Brand zone (1.4fr/1fr): logo SVG + tagline 440px + CTA pill ghost
+    "Hablemos →" + tel/email grandes apilados a la derecha.
+  - Nav zone (4×1): Áreas · Despacho · Legal · **Visítanos** (sedes
+    pasan a su columna propia, antes vivían pegadas al logo).
+- **Eyebrows sin corchetes**: `ÁREAS` con hairline 24×1px decorativa
+  debajo (sustituye al `[ÁREAS]`).
+- Bottom-bar minimal sin acento dorado (ya no encaja con la paleta
+  monocromática navy): hairline blanco al .08, copyright + horario
+  ambos 13px muted.
+- Hover en links: `translateX(2px)` + color blanco puro.
+- CTA "Hablemos" pill ghost-on-dark border `rgba(255,255,255,.24)` →
+  hover bg `rgba(255,255,255,.08)` + border `.48`.
+
+### Métricas Lighthouse v2.4 (LocalWP HTTP)
+
+| Categoría | Mobile | Desktop | Δ vs v2.3 |
+|---|---:|---:|---|
+| Performance | **88** | **100** | -6 / = |
+| Accessibility | 94 | 94 | = |
+| Best Practices | 78 | 78 | = |
+| SEO | 92 | 92 | = |
+
+El bajón mobile (-6) es por +2 bloques + más CSS/DOM. Sigue por encima
+del baseline aceptable. En producción Cloudways esperamos +5-8 puntos.
+
+---
+
 ## [v2.3-home] · 2026-05-09 — Hero compacto + form 4 campos + logo footer
 
 5 ajustes acumulativos sobre `v2.2-home`:

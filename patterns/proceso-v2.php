@@ -1,37 +1,49 @@
 <?php
-/** PROCESO v2 — timeline horizontal 4 nodos. */
+/** EL PROCESO v2.4 — timeline horizontal 4 pasos. */
 defined( 'ABSPATH' ) || exit;
+
+$pasos = array(
+	array(
+		'num' => '01', 'tiempo' => 'Día 0',
+		'titulo' => 'Primera llamada',
+		'desc' => 'Cuéntame tu situación sin compromiso. 30 minutos. Yo te escucho.',
+	),
+	array(
+		'num' => '02', 'tiempo' => '< 24h',
+		'titulo' => 'Análisis de viabilidad',
+		'desc' => 'Reviso documentación y te respondo por escrito si tu caso encaja, con honorarios cerrados.',
+	),
+	array(
+		'num' => '03', 'tiempo' => '1-4 meses',
+		'titulo' => 'Expediente y escritos',
+		'desc' => 'Preparo, presento y defiendo. Te mando cada paso por email y resolvemos dudas por WhatsApp.',
+	),
+	array(
+		'num' => '04', 'tiempo' => 'Sentencia',
+		'titulo' => 'Resolución y seguimiento',
+		'desc' => 'Te acompaño hasta el último auto y te aviso de cualquier obligación posterior.',
+	),
+);
 ?>
-<section class="v2-section">
+<section class="v2-section v2-section--cream v2-proceso">
 	<div class="v2-container">
-		<header class="v2-section__head">
-			<div>
-				<span class="v2-eyebrow">[04 — PROCESO]</span>
-				<h2 class="v2-section__title">De la primera llamada a la sentencia,<br>en 4 pasos.</h2>
+		<header class="v2-proceso__head">
+			<div class="v2-proceso__title-wrap">
+				<span class="v2-eyebrow">EL PROCESO</span>
+				<h2 class="v2-proceso__title">De la primera llamada a<br>la sentencia, <em>en 4 pasos</em>.</h2>
 			</div>
+			<p class="v2-proceso__aside">¿Y mientras tanto? — te llamo yo</p>
 		</header>
 
-		<div class="v2-process">
-			<div class="v2-process__step">
-				<span class="v2-process__num">01</span>
-				<h3 class="v2-process__title">Primer contacto</h3>
-				<p class="v2-process__note">24h respuesta</p>
-			</div>
-			<div class="v2-process__step">
-				<span class="v2-process__num">02</span>
-				<h3 class="v2-process__title">Análisis de viabilidad</h3>
-				<p class="v2-process__note">Gratuito</p>
-			</div>
-			<div class="v2-process__step">
-				<span class="v2-process__num">03</span>
-				<h3 class="v2-process__title">Presentación y seguimiento</h3>
-				<p class="v2-process__note">Honorarios cerrados</p>
-			</div>
-			<div class="v2-process__step">
-				<span class="v2-process__num">04</span>
-				<h3 class="v2-process__title">Sentencia y exoneración</h3>
-				<p class="v2-process__note">BEPI</p>
-			</div>
+		<div class="v2-proceso__timeline" data-stagger>
+			<?php foreach ( $pasos as $p ) : ?>
+				<div class="v2-proceso__step">
+					<span class="v2-proceso__dot" aria-hidden="true"></span>
+					<p class="v2-proceso__meta"><?php echo esc_html( $p['num'] ); ?> · <?php echo esc_html( $p['tiempo'] ); ?></p>
+					<h3 class="v2-proceso__step-title"><?php echo esc_html( $p['titulo'] ); ?></h3>
+					<p class="v2-proceso__step-desc"><?php echo esc_html( $p['desc'] ); ?></p>
+				</div>
+			<?php endforeach; ?>
 		</div>
 	</div>
 </section>
