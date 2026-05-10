@@ -239,6 +239,7 @@ require_once get_template_directory() . '/inc/reviews.php';
 require_once get_template_directory() . '/inc/enqueue-home-v2.php';
 require_once get_template_directory() . '/inc/contact-handler-v2.php';
 require_once get_template_directory() . '/inc/lso-redirects.php';
+require_once get_template_directory() . '/inc/cpt-casos.php';
 
 /* ---------------------------------------------------------------
  * 7. Datos de las sedes

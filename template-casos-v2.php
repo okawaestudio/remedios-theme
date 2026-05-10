@@ -66,23 +66,34 @@ $filtros = array(
 
 	<section class="v2-section v2-section--white">
 		<div class="v2-container">
-			<div class="v2-casos-grid v2-casos-page__grid" data-stagger>
-				<?php foreach ( $casos as $c ) : ?>
-					<article class="v2-caso-card v2-caso-page" data-area="<?php echo esc_attr( $c['area'] ); ?>">
-						<header class="v2-caso-card__head">
-							<span class="v2-caso-card__area"><?php echo esc_html( $c['area_label'] ); ?></span>
-							<span class="v2-caso-card__ref"><?php echo esc_html( $c['ref'] ); ?></span>
-						</header>
-						<p class="v2-caso-card__amount"><?php echo esc_html( $c['amount'] ); ?></p>
-						<h2 class="v2-caso-card__title"><?php echo esc_html( $c['title'] ); ?></h2>
-						<p class="v2-caso-card__desc"><?php echo esc_html( $c['desc'] ); ?></p>
-						<footer class="v2-caso-card__foot">
-							<span><?php echo esc_html( $c['where'] ); ?></span>
-							<span><?php echo esc_html( $c['date'] ); ?></span>
-						</footer>
-					</article>
-				<?php endforeach; ?>
-			</div>
+			<?php if ( $casos ) : ?>
+				<div class="v2-casos-grid v2-casos-page__grid" data-stagger>
+					<?php foreach ( $casos as $c ) : ?>
+						<article class="v2-caso-card v2-caso-page" data-area="<?php echo esc_attr( $c['area_slug'] ); ?>">
+							<header class="v2-caso-card__head">
+								<span class="v2-caso-card__area"><?php echo esc_html( $c['area_label'] ); ?></span>
+								<span class="v2-caso-card__ref"><?php echo esc_html( $c['ref'] ); ?></span>
+							</header>
+							<p class="v2-caso-card__amount"><?php echo esc_html( $c['amount'] ); ?></p>
+							<h2 class="v2-caso-card__title"><?php echo esc_html( $c['title'] ); ?></h2>
+							<p class="v2-caso-card__desc"><?php echo esc_html( $c['desc'] ); ?></p>
+							<footer class="v2-caso-card__foot">
+								<span><?php echo esc_html( $c['where'] ); ?></span>
+								<span><?php echo esc_html( $c['date'] ); ?></span>
+							</footer>
+						</article>
+					<?php endforeach; ?>
+				</div>
+			<?php else : ?>
+				<div class="v2-blog-empty">
+					<p class="v2-blog-empty__eyebrow">[ AÚN SIN CASOS PUBLICADOS ]</p>
+					<h2 class="v2-blog-empty__title">Pronto añadiremos <em>casos resueltos</em>.</h2>
+					<p class="v2-blog-empty__desc">
+						Estamos preparando la primera tanda de procedimientos
+						resueltos para publicar aquí. Vuelve en unos días.
+					</p>
+				</div>
+			<?php endif; ?>
 		</div>
 	</section>
 
