@@ -32,28 +32,28 @@ $filtros = array(
 
 	<section class="v2-section v2-section--cream">
 		<div class="v2-container">
-			<header class="v2-casos__head">
+			<header class="v2-casos-page__head">
 				<nav class="v2-equipo__crumbs" aria-label="Migas de pan">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Inicio</a>
 					<span aria-hidden="true">/</span>
 					<span aria-current="page">Casos de éxito</span>
 				</nav>
 				<span class="v2-eyebrow">CASOS DE ÉXITO</span>
-				<h1 class="v2-casos__title">
+				<h1 class="v2-casos-page__title">
 					Casos resueltos. <em>Cifras reales.</em><br>
 					Detalles públicos con consentimiento.
 				</h1>
-				<p class="v2-casos__lead">
+				<p class="v2-casos-page__lead">
 					Selección de procedimientos resueltos en los últimos 12 meses.
 					Datos publicados con autorización expresa de cada cliente.
 					Casos confidenciales bajo NDA no aparecen.
 				</p>
 			</header>
 
-			<div class="v2-casos__filters" role="tablist" aria-label="Filtrar por área">
+			<div class="v2-casos-page__filters" role="tablist" aria-label="Filtrar por área">
 				<?php foreach ( $filtros as $value => $label ) : ?>
 					<button type="button"
-					        class="v2-casos__filter<?php echo $value === 'todas' ? ' is-active' : ''; ?>"
+					        class="v2-casos-page__filter<?php echo $value === 'todas' ? ' is-active' : ''; ?>"
 					        data-filter="<?php echo esc_attr( $value ); ?>"
 					        role="tab"
 					        aria-selected="<?php echo $value === 'todas' ? 'true' : 'false'; ?>">
@@ -114,7 +114,7 @@ $filtros = array(
 <script>
 // Filtro JS minimal — toggle visibilidad por data-area
 (function(){
-	const buttons = document.querySelectorAll('.v2-casos__filter');
+	const buttons = document.querySelectorAll('.v2-casos-page__filter[data-filter]');
 	const cards   = document.querySelectorAll('.v2-caso-page');
 	buttons.forEach(b => b.addEventListener('click', () => {
 		const f = b.dataset.filter;

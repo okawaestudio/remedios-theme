@@ -16,17 +16,17 @@ $query = new WP_Query( array(
 <article class="v2-blog">
 	<section class="v2-section v2-section--cream">
 		<div class="v2-container">
-			<header class="v2-casos__head">
+			<header class="v2-casos-page__head">
 				<nav class="v2-equipo__crumbs" aria-label="Migas de pan">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Inicio</a>
 					<span aria-hidden="true">/</span>
 					<span aria-current="page">Blog</span>
 				</nav>
 				<span class="v2-eyebrow">DIARIO JURÍDICO</span>
-				<h1 class="v2-casos__title">
+				<h1 class="v2-casos-page__title">
 					Lo último que <em>escribimos</em>.
 				</h1>
-				<p class="v2-casos__lead">
+				<p class="v2-casos-page__lead">
 					Artículos sobre Ley de Segunda Oportunidad, derecho bancario,
 					mercantil, civil y penal. Sin tecnicismos innecesarios — para
 					que entiendas qué pasa con tu caso.
