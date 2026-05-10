@@ -582,6 +582,8 @@ $provincias = array(
 		</div>
 	</section>
 
+	<?php get_template_part( 'patterns/spain-coverage-v2' ); ?>
+
 </article>
 
 <?php get_footer(); ?>
