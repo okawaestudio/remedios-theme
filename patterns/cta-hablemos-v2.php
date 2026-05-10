@@ -19,7 +19,7 @@ $garantias = array(
 	'Sin coste si no hay viabilidad',
 );
 ?>
-<section class="v2-section v2-section--white v2-hablemos" id="contacto-home">
+<section class="v2-section v2-section--cream v2-hablemos" id="contacto-home">
 	<div class="v2-container">
 		<div class="v2-hablemos__grid">
 			<div class="v2-hablemos__left">
