@@ -25,10 +25,26 @@ if ( ! $prov ) {
 }
 
 $theme_uri  = get_template_directory_uri();
-$bg_jpg     = $theme_uri . '/assets/img/hero/area-lso.jpg';
-$bg_webp_lg = $theme_uri . '/assets/img/hero/area-lso.webp';
-$bg_webp_md = $theme_uri . '/assets/img/hero/area-lso-1280.webp';
-$bg_webp_sm = $theme_uri . '/assets/img/hero/area-lso-720.webp';
+$theme_path = get_template_directory();
+
+// Imagen hero por provincia. Convención:
+//   assets/img/hero/provincias/{slug}.jpg            ← original
+//   assets/img/hero/provincias/{slug}.webp           ← 1920w
+//   assets/img/hero/provincias/{slug}-1280.webp
+//   assets/img/hero/provincias/{slug}-720.webp
+// Fallback: area-lso.* genérica si no existe la específica.
+$prov_jpg_path = $theme_path . '/assets/img/hero/provincias/' . $prov_slug . '.jpg';
+if ( file_exists( $prov_jpg_path ) ) {
+	$bg_jpg     = $theme_uri . '/assets/img/hero/provincias/' . $prov_slug . '.jpg';
+	$bg_webp_lg = $theme_uri . '/assets/img/hero/provincias/' . $prov_slug . '.webp';
+	$bg_webp_md = $theme_uri . '/assets/img/hero/provincias/' . $prov_slug . '-1280.webp';
+	$bg_webp_sm = $theme_uri . '/assets/img/hero/provincias/' . $prov_slug . '-720.webp';
+} else {
+	$bg_jpg     = $theme_uri . '/assets/img/hero/area-lso.jpg';
+	$bg_webp_lg = $theme_uri . '/assets/img/hero/area-lso.webp';
+	$bg_webp_md = $theme_uri . '/assets/img/hero/area-lso-1280.webp';
+	$bg_webp_sm = $theme_uri . '/assets/img/hero/area-lso-720.webp';
+}
 
 // Datos compartidos con el template hub
 $fases = array(
