@@ -74,11 +74,22 @@ $slug = $cfg['slug_area'] ?? 'area';
 				<nav class="v2-lso-bghero__crumbs" aria-label="Migas de pan">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Inicio</a>
 					<span aria-hidden="true">/</span>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>#areas">Áreas</a>
-					<span aria-hidden="true">/</span>
+					<?php if ( ! empty( $cfg['parent_label'] ) ) : ?>
+						<a href="<?php echo esc_url( $cfg['parent_url'] ?? home_url( '/' ) ); ?>"><?php echo esc_html( $cfg['parent_label'] ); ?></a>
+						<span aria-hidden="true">/</span>
+					<?php else : ?>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>#areas">Áreas</a>
+						<span aria-hidden="true">/</span>
+					<?php endif; ?>
 					<span aria-current="page"><?php echo esc_html( $cfg['area_label'] ); ?></span>
 				</nav>
-				<span class="v2-hero-bg__eyebrow">ÁREA <?php echo esc_html( $cfg['area_num'] ); ?> · <?php echo esc_html( strtoupper( $cfg['area_label'] ) ); ?></span>
+				<span class="v2-hero-bg__eyebrow"><?php
+					if ( ! empty( $cfg['eyebrow_override'] ) ) {
+						echo esc_html( $cfg['eyebrow_override'] );
+					} else {
+						echo 'ÁREA ' . esc_html( $cfg['area_num'] ) . ' · ' . esc_html( strtoupper( $cfg['area_label'] ) );
+					}
+				?></span>
 				<h1 class="v2-hero-bg__title">
 					<?php echo esc_html( $cfg['hero_title_main'] ); ?>
 					<em class="v2-hero-bg__accent"><?php echo esc_html( $cfg['hero_title_em'] ); ?></em>
