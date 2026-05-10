@@ -54,8 +54,9 @@ $garantias = array(
 			</div>
 
 			<div class="v2-hablemos__form-card">
-				<form class="v2-form-stack" method="post" action="#" novalidate>
+				<form class="v2-form-stack" method="post" action="<?php echo morillo_form_action(); ?>" novalidate>
 					<input type="text" name="hp_nombre" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+						<?php morillo_form_hidden_fields(); ?>
 
 					<div class="v2-form-row">
 						<div class="v2-field">

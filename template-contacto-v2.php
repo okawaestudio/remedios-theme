@@ -83,8 +83,9 @@ $sedes = array(
 				</div>
 
 				<div class="v2-hablemos__form-card">
-					<form class="v2-form-stack" method="post" action="#" novalidate>
+					<form class="v2-form-stack" method="post" action="<?php echo morillo_form_action(); ?>" novalidate>
 						<input type="text" name="hp_nombre" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+						<?php morillo_form_hidden_fields(); ?>
 						<div class="v2-form-row">
 							<div class="v2-field"><input type="text" name="nombre" id="ct-nombre" placeholder=" " required><label for="ct-nombre" class="v2-field__label">Nombre*</label></div>
 							<div class="v2-field"><input type="tel" name="telefono" id="ct-telefono" placeholder=" " required><label for="ct-telefono" class="v2-field__label">Teléfono*</label></div>

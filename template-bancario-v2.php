@@ -183,8 +183,9 @@ $provincias_form = array(
 				</div>
 			</div>
 
-			<form class="v2-hero-form" method="post" action="#contacto-form" novalidate aria-label="Captura rápida">
+			<form class="v2-hero-form" method="post" action="<?php echo morillo_form_action(); ?>" novalidate aria-label="Captura rápida">
 				<input type="text" name="hp_nombre" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+						<?php morillo_form_hidden_fields(); ?>
 				<p class="v2-hero-form__eyebrow">ESTUDIO GRATUITO</p>
 				<h2 class="v2-hero-form__title">Cuéntanos qué te cobraron.</h2>
 				<p class="v2-hero-form__sub">Te respondemos en menos de 24h.</p>
@@ -514,8 +515,9 @@ $provincias_form = array(
 				</div>
 
 				<div class="v2-hablemos__form-card">
-					<form class="v2-form-stack" method="post" action="#" novalidate>
+					<form class="v2-form-stack" method="post" action="<?php echo morillo_form_action(); ?>" novalidate>
 						<input type="text" name="hp_nombre" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+						<?php morillo_form_hidden_fields(); ?>
 						<div class="v2-form-row">
 							<div class="v2-field">
 								<input type="text" name="nombre" id="bn-nombre" placeholder=" " required>

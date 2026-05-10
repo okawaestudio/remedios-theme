@@ -115,8 +115,9 @@ $slug = $cfg['slug_area'] ?? 'area';
 				</div>
 			</div>
 
-			<form class="v2-hero-form" method="post" action="#contacto-form" novalidate>
+			<form class="v2-hero-form" method="post" action="<?php echo morillo_form_action(); ?>" novalidate>
 				<input type="text" name="hp_nombre" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+						<?php morillo_form_hidden_fields(); ?>
 				<p class="v2-hero-form__eyebrow">CONSULTA GRATUITA</p>
 				<h2 class="v2-hero-form__title">Cuéntanos tu caso.</h2>
 				<p class="v2-hero-form__sub">Te respondemos en menos de 24h.</p>
@@ -341,8 +342,9 @@ $slug = $cfg['slug_area'] ?? 'area';
 				</div>
 
 				<div class="v2-hablemos__form-card">
-					<form class="v2-form-stack" method="post" action="#" novalidate>
+					<form class="v2-form-stack" method="post" action="<?php echo morillo_form_action(); ?>" novalidate>
 						<input type="text" name="hp_nombre" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+						<?php morillo_form_hidden_fields(); ?>
 						<div class="v2-form-row">
 							<div class="v2-field">
 								<input type="text" name="nombre" id="<?php echo esc_attr( $slug ); ?>-nombre" placeholder=" " required>

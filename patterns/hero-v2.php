@@ -54,8 +54,9 @@ $bg_webp_sm = $theme_uri . '/assets/img/hero/madrid-granvia-720.webp';
 			</div>
 		</div>
 
-		<form class="v2-hero-form" method="post" action="#contacto-home" novalidate aria-label="Captura rápida de contacto">
+		<form class="v2-hero-form" method="post" action="<?php echo morillo_form_action(); ?>" novalidate aria-label="Captura rápida de contacto">
 			<input type="text" name="hp_nombre" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+						<?php morillo_form_hidden_fields(); ?>
 			<p class="v2-hero-form__eyebrow">CONSULTA GRATUITA</p>
 			<h2 class="v2-hero-form__title">Cuéntanos tu caso.</h2>
 			<p class="v2-hero-form__sub">Te respondemos en menos de 24h.</p>

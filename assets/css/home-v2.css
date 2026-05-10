@@ -4284,6 +4284,189 @@
   border: 1px solid var(--v2-line);
 }
 
+/* ── GRACIAS · post-form ─────────────────────────────────────── */
+.v2-gracias-hero__inner {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  padding-block: clamp(1.5rem, 3vw, 3rem);
+}
+.v2-gracias-hero__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--v2-success);
+  margin-bottom: 24px;
+}
+.v2-gracias-hero__title {
+  font-family: var(--v2-font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 1.4rem + 2.5vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--v2-ink);
+  margin: 16px 0 20px;
+  text-wrap: balance;
+}
+.v2-gracias-hero__title em { font-style: italic; color: var(--v2-primary); }
+.v2-gracias-hero__lead {
+  font-family: var(--v2-font-display);
+  font-weight: 400;
+  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.15rem);
+  line-height: 1.6;
+  color: var(--v2-ink-soft);
+  margin: 0 0 16px;
+  max-width: 60ch;
+  margin-inline: auto;
+}
+.v2-gracias-hero__ref {
+  font-family: var(--v2-font-display);
+  font-weight: 500;
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--v2-muted);
+  margin: 0 0 24px;
+}
+.v2-gracias-hero__cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.v2-gracias-next__head {
+  text-align: center;
+  margin-bottom: 48px;
+  max-width: 700px;
+  margin-inline: auto;
+}
+.v2-gracias-next__title {
+  font-family: var(--v2-font-display);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--v2-ink);
+  margin: 16px 0 0;
+}
+.v2-gracias-next__title em { font-style: italic; color: var(--v2-primary); }
+
+.v2-gracias-next__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 900px) { .v2-gracias-next__grid { grid-template-columns: 1fr; } }
+.v2-gracias-next__step {
+  background: var(--v2-bg);
+  border: 1px solid var(--v2-line);
+  border-radius: var(--v2-radius-md);
+  padding: 32px 28px;
+}
+.v2-gracias-next__num {
+  font-family: var(--v2-font-display);
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  color: var(--v2-blue);
+  margin: 0 0 8px;
+  font-feature-settings: "tnum";
+  line-height: 1;
+}
+.v2-gracias-next__time {
+  font-family: var(--v2-font-display);
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--v2-muted);
+  margin: 0 0 16px;
+}
+.v2-gracias-next__t {
+  font-family: var(--v2-font-display);
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--v2-ink);
+  margin: 0 0 10px;
+}
+.v2-gracias-next__d {
+  font-family: var(--v2-font-display);
+  font-weight: 400;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--v2-muted-strong);
+  margin: 0;
+}
+
+.v2-gracias-direct__head {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-inline: auto;
+}
+.v2-gracias-direct__title {
+  font-family: var(--v2-font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2rem);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  color: var(--v2-ink);
+  margin: 16px 0 0;
+}
+.v2-gracias-direct__title em { font-style: italic; color: var(--v2-primary); }
+
+.v2-gracias-direct__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 700px) { .v2-gracias-direct__grid { grid-template-columns: 1fr; } }
+.v2-gracias-direct__card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 24px 28px;
+  background: var(--v2-surface);
+  border: 1px solid var(--v2-line);
+  border-radius: var(--v2-radius-md);
+  text-decoration: none;
+  color: var(--v2-ink);
+  transition: transform var(--v2-dur-base) var(--v2-ease-out),
+              border-color var(--v2-dur-base) var(--v2-ease-out);
+}
+.v2-gracias-direct__card:hover {
+  transform: translateY(-2px);
+  border-color: var(--v2-primary);
+}
+.v2-gracias-direct__label {
+  font-family: var(--v2-font-display);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--v2-muted);
+}
+.v2-gracias-direct__value {
+  font-family: var(--v2-font-display);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: var(--v2-primary);
+  font-feature-settings: "tnum";
+}
+.v2-gracias-direct__sub {
+  font-family: var(--v2-font-display);
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--v2-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
 
 /* ── Header v2.2: tipografía Jakarta ───────────────────────────── */
 .v2-home .v2-header__phone {
