@@ -3338,6 +3338,55 @@
   .v2-lso-faq__icon, .v2-lso-faq__a { transition: none !important; animation: none !important; }
 }
 
+/* ── LSO Provincia · bloque juzgado ────────────────────────────── */
+.v2-lso-juzgado__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+@media (max-width: 900px) { .v2-lso-juzgado__grid { grid-template-columns: 1fr; } }
+.v2-lso-juzgado__title {
+  font-family: var(--v2-font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--v2-ink);
+  margin: 16px 0 0 0;
+}
+.v2-lso-juzgado__title em {
+  font-style: italic;
+  color: var(--v2-primary);
+}
+.v2-lso-juzgado__data dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  border-top: 1px solid var(--v2-line-strong);
+}
+.v2-lso-juzgado__data dt,
+.v2-lso-juzgado__data dd {
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--v2-line);
+  font-family: var(--v2-font-display);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.v2-lso-juzgado__data dt {
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--v2-muted);
+  align-self: center;
+}
+.v2-lso-juzgado__data dd {
+  color: var(--v2-ink);
+  font-weight: 500;
+}
+
 
 /* ── Header v2.2: tipografía Jakarta ───────────────────────────── */
 .v2-home .v2-header__phone {
