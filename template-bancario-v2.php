@@ -271,7 +271,7 @@ $provincias_form = array(
 			<div class="v2-sobre__grid">
 				<div class="v2-sobre__photo-wrap">
 					<figure class="v2-sobre__photo">
-						<img src="<?php echo esc_url( $theme_uri . '/assets/img/team/remedios.jpg' ); ?>"
+						<img src="<?php echo esc_url( $theme_uri . '/assets/img/team/remedios-trabajando.jpg' ); ?>"
 						     alt="Remedios Morillo Hernán, abogada especialista en derecho bancario"
 						     loading="lazy" width="600" height="800" itemprop="image">
 					</figure>

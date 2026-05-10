@@ -172,7 +172,8 @@ $slug = $cfg['slug_area'] ?? 'area';
 			<div class="v2-sobre__grid">
 				<div class="v2-sobre__photo-wrap">
 					<figure class="v2-sobre__photo">
-						<img src="<?php echo esc_url( $theme_uri . '/assets/img/team/remedios.jpg' ); ?>"
+						<?php $author_img = $cfg['author_img'] ?? 'remedios.jpg'; ?>
+						<img src="<?php echo esc_url( $theme_uri . '/assets/img/team/' . $author_img ); ?>"
 						     alt="Remedios Morillo, abogada especialista en <?php echo esc_attr( $cfg['area_label'] ); ?>"
 						     loading="lazy" width="600" height="800" itemprop="image">
 					</figure>

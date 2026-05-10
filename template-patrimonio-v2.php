@@ -36,6 +36,7 @@ $cfg = array(
 	'slug_area'         => 'patrimonio',
 	'area_label'        => 'Gestión de Patrimonio',
 	'area_num'          => '04 / 06',
+	'author_img'        => 'remedios-blanco.jpg',
 
 	'hero_title_main'   => 'Lo que construyes hoy',
 	'hero_title_em'     => 'tiene que durar.',

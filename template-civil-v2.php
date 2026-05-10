@@ -36,6 +36,7 @@ $cfg = array(
 	'slug_area'         => 'civil',
 	'area_label'        => 'Derecho Civil',
 	'area_num'          => '05 / 06',
+	'author_img'        => 'remedios-balcon.jpg',
 
 	'hero_title_main'   => 'Tu defensa',
 	'hero_title_em'     => 'en el día a día.',

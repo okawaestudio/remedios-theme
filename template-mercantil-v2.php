@@ -36,6 +36,7 @@ $cfg = array(
 	'slug_area'         => 'mercantil',
 	'area_label'        => 'Derecho Mercantil',
 	'area_num'          => '03 / 06',
+	'author_img'        => 'remedios-trabajando.jpg',
 
 	'hero_title_main'   => 'Asesoría jurídica',
 	'hero_title_em'     => 'para tu empresa.',
