@@ -213,6 +213,54 @@ $provincias = array(
 		</div>
 	</section>
 
+	<!-- ── QUIÉN SE ENCARGA (perfil Remedios — Schema Person) ──────── -->
+	<section class="v2-section v2-section--cream-2 v2-lso-author"
+	         itemscope itemtype="https://schema.org/Person">
+		<meta itemprop="jobTitle" content="Abogada">
+		<meta itemprop="knowsAbout" content="Ley de Segunda Oportunidad, BEPI, Concurso de acreedores">
+		<div itemprop="worksFor" itemscope itemtype="https://schema.org/LegalService" style="display:none;">
+			<meta itemprop="name" content="Remedios Morillo Abogados">
+			<meta itemprop="areaServed" content="Madrid, Málaga, España">
+		</div>
+		<div class="v2-container">
+			<div class="v2-sobre__grid">
+				<div class="v2-sobre__photo-wrap">
+					<figure class="v2-sobre__photo">
+						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/team/remedios.jpg' ); ?>"
+						     alt="Remedios Morillo Hernán, abogada titular especialista en Ley de Segunda Oportunidad"
+						     loading="lazy"
+						     width="600" height="800"
+						     itemprop="image">
+					</figure>
+					<span class="v2-sobre__chip">+143 EXPEDIENTES LSO</span>
+				</div>
+				<div class="v2-sobre__body">
+					<span class="v2-eyebrow">QUIÉN SE ENCARGA</span>
+					<h2 class="v2-sobre__title">
+						Soy <em itemprop="name">Remedios Morillo</em>,<br>
+						abogada especialista en LSO.
+					</h2>
+					<p>
+						Llevo personalmente cada expediente concursal de Segunda
+						Oportunidad. Más de <strong>143 procedimientos resueltos</strong>
+						desde 2019 — incluidos casos complejos con hipoteca, autónomos
+						con deuda mixta bancaria y AEAT, y matrimonios en gananciales.
+					</p>
+					<p>
+						No subcontrato. No te pasa de mano en mano. Si tu caso encaja,
+						lo trabajamos tú y yo desde la primera llamada hasta la sentencia
+						BEPI. Y si no encaja, te lo digo el primer día — sin facturarte
+						nada.
+					</p>
+					<a class="v2-link-mono" href="<?php echo esc_url( home_url( '/equipo/' ) ); ?>">
+						Conoce al despacho completo
+						<span class="v2-arrow" aria-hidden="true">→</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<!-- ── PROCEDIMIENTO · 5 FASES ──────────────────────────────────── -->
 	<section class="v2-section v2-section--cream-2">
 		<div class="v2-container">
@@ -370,6 +418,72 @@ $provincias = array(
 						</div>
 						<span class="v2-arrow" aria-hidden="true">→</span>
 					</a>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</section>
+
+	<!-- ── FAQ (Schema FAQPage para rich snippet en Google) ────────── -->
+	<?php
+	$faqs = array(
+		array(
+			'q' => '¿Pierdo mi vivienda habitual con la Ley de Segunda Oportunidad?',
+			'a' => 'No necesariamente. Existen mecanismos para conservar la vivienda habitual cuando la cuota hipotecaria es asumible y estás al corriente de los pagos. La hipoteca con garantía sobre la vivienda no se exonera, pero el resto de deudas sí, lo que suele liberar capacidad económica suficiente para mantener la cuota mensual.',
+		),
+		array(
+			'q' => '¿Cuánto cuesta el procedimiento en honorarios?',
+			'a' => 'Tras el análisis de viabilidad gratuito, te entregamos un presupuesto cerrado por escrito antes de firmar nada. No hay sorpresas ni minutas adicionales. Si tu caso no es viable, no te facturamos.',
+		),
+		array(
+			'q' => 'Mi pareja también tiene deudas. ¿Podemos solicitarlo juntos?',
+			'a' => 'Sí. La normativa permite la solicitud conjunta de cónyuges que estén en régimen de gananciales o que sean codeudores de las mismas obligaciones. Lo evaluamos caso a caso para optimizar costes y plazos.',
+		),
+		array(
+			'q' => '¿Quedan canceladas las deudas con Hacienda y Seguridad Social?',
+			'a' => 'Parcialmente. La Ley permite exonerar hasta 10.000 € por crédito público (5.000 € de Hacienda y 5.000 € de Seguridad Social). Por encima de esa cantidad, se establece un plan de pagos a medida.',
+		),
+		array(
+			'q' => '¿Cuánto tarda el procedimiento?',
+			'a' => 'Entre 4 y 8 meses desde la admisión a trámite, dependiendo del juzgado mercantil y del volumen de acreedores. Desde que firmamos hasta la admisión suelen pasar 4-6 semanas adicionales para preparar la documentación.',
+		),
+		array(
+			'q' => '¿Tengo que ir al juzgado o a algún sitio?',
+			'a' => 'En la mayoría de los casos no es necesaria tu presencia física. La gestión documental la hacemos nosotros, las comunicaciones con el juzgado son telemáticas y, si en algún momento es necesaria una vista, te acompaño personalmente.',
+		),
+		array(
+			'q' => '¿Qué pasa con mi sueldo? ¿Me pueden seguir embargando?',
+			'a' => 'Una vez admitido el concurso, todos los embargos se paralizan inmediatamente — incluido el de nómina. Los acreedores no pueden seguir reclamándote ni iniciar nuevas acciones contra ti durante el procedimiento.',
+		),
+		array(
+			'q' => '¿Quedará constancia pública de que he hecho un concurso?',
+			'a' => 'El concurso de persona natural se publica en el BOE y en el Registro Público Concursal. La constancia es estrictamente legal: ni los bancos ni las empresas pueden penalizarte laboralmente por ello, y tras el BEPI vuelves a tener historial crediticio limpio.',
+		),
+	);
+	?>
+	<section class="v2-section v2-section--white v2-lso-faq"
+	         itemscope itemtype="https://schema.org/FAQPage">
+		<div class="v2-container">
+			<header class="v2-lso-faq__head">
+				<span class="v2-eyebrow">PREGUNTAS FRECUENTES</span>
+				<h2 class="v2-lso-faq__title">Resolvemos las dudas <em>más habituales</em>.</h2>
+			</header>
+			<div class="v2-lso-faq__list">
+				<?php foreach ( $faqs as $f ) : ?>
+					<details class="v2-lso-faq__item"
+					         itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+						<summary class="v2-lso-faq__q">
+							<span itemprop="name"><?php echo esc_html( $f['q'] ); ?></span>
+							<span class="v2-lso-faq__icon" aria-hidden="true">
+								<svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+									<path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</span>
+						</summary>
+						<div class="v2-lso-faq__a"
+						     itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+							<p itemprop="text"><?php echo esc_html( $f['a'] ); ?></p>
+						</div>
+					</details>
 				<?php endforeach; ?>
 			</div>
 		</div>

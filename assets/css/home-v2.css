@@ -3244,6 +3244,100 @@
   background: transparent;
 }
 
+/* ── LSO · Quién se encarga (reusa estilos .v2-sobre__* de home) ─── */
+.v2-lso-author .v2-sobre__chip {
+  background: var(--v2-blue);
+  color: #fff;
+}
+.v2-lso-author .v2-sobre__body p strong { color: var(--v2-ink); font-weight: 600; }
+
+/* ── LSO · FAQ acordeón nativo <details> ─────────────────────────── */
+.v2-lso-faq__head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+  max-width: 720px;
+}
+.v2-lso-faq__title {
+  font-family: var(--v2-font-display);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--v2-ink);
+  margin: 16px 0 0 0;
+}
+.v2-lso-faq__title em { font-style: italic; color: var(--v2-primary); }
+
+.v2-lso-faq__list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--v2-line-strong);
+}
+.v2-lso-faq__item {
+  border-bottom: 1px solid var(--v2-line);
+  padding: 0;
+}
+.v2-lso-faq__q {
+  font-family: var(--v2-font-display);
+  font-weight: 600;
+  font-size: 17.5px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--v2-ink);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0;
+  user-select: none;
+  transition: color var(--v2-dur-fast) var(--v2-ease-out);
+}
+.v2-lso-faq__q::-webkit-details-marker { display: none; }
+.v2-lso-faq__q:hover { color: var(--v2-primary); }
+.v2-lso-faq__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--v2-line-strong);
+  border-radius: 999px;
+  color: var(--v2-primary);
+  flex-shrink: 0;
+  transition: transform var(--v2-dur-base) var(--v2-ease-out),
+              background var(--v2-dur-fast) var(--v2-ease-out);
+}
+.v2-lso-faq__item[open] .v2-lso-faq__icon {
+  transform: rotate(180deg);
+  background: var(--v2-primary);
+  color: #fff;
+  border-color: var(--v2-primary);
+}
+.v2-lso-faq__a {
+  padding: 0 0 24px 0;
+  max-width: 720px;
+  animation: v2-faq-fade 280ms var(--v2-ease-out);
+}
+.v2-lso-faq__a p {
+  font-family: var(--v2-font-display);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--v2-muted-strong);
+  margin: 0;
+}
+@keyframes v2-faq-fade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v2-lso-faq__icon, .v2-lso-faq__a { transition: none !important; animation: none !important; }
+}
+
 
 /* ── Header v2.2: tipografía Jakarta ───────────────────────────── */
 .v2-home .v2-header__phone {
