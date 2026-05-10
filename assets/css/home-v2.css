@@ -3580,6 +3580,103 @@
   opacity: 1;
 }
 
+/* ── REVOLVING · grid 5 indicadores ──────────────────────────── */
+.v2-revolving__grid { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .v2-revolving__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .v2-revolving__grid { grid-template-columns: 1fr; } }
+
+/* ── REVOLVING · tabla cantidades ────────────────────────────── */
+.v2-revolving__cantidades {
+  background: var(--v2-surface);
+  border: 1px solid var(--v2-line);
+  border-radius: var(--v2-radius-md);
+  overflow: hidden;
+}
+.v2-revolving__cantidades-head,
+.v2-revolving__cantidades-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr;
+  gap: 16px;
+  padding: 18px 24px;
+  align-items: center;
+}
+.v2-revolving__cantidades-head {
+  background: var(--v2-bg);
+  border-bottom: 2px solid var(--v2-line-strong);
+  font-family: var(--v2-font-display);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--v2-muted);
+}
+.v2-revolving__cantidades-row {
+  border-bottom: 1px solid var(--v2-line);
+  font-family: var(--v2-font-display);
+}
+.v2-revolving__cantidades-row:last-child { border-bottom: 0; }
+.v2-revolving__cant-antig {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--v2-ink);
+}
+.v2-revolving__cant-disp {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--v2-muted-strong);
+  font-feature-settings: "tnum";
+}
+.v2-revolving__cant-dev {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--v2-primary);
+  font-feature-settings: "tnum";
+  letter-spacing: -0.01em;
+}
+@media (max-width: 700px) {
+  .v2-revolving__cantidades-head { display: none; }
+  .v2-revolving__cantidades-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 18px 20px;
+  }
+  .v2-revolving__cant-disp::before { content: "Dispuesto: "; color: var(--v2-muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; }
+  .v2-revolving__cant-dev::before  { content: "Devolución: "; color: var(--v2-muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; }
+}
+
+/* ── REVOLVING · emisores chips ──────────────────────────────── */
+.v2-revolving__emisores-head {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 720px;
+  margin-inline: auto;
+}
+.v2-revolving__emisores-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  justify-content: center;
+  max-width: 900px;
+  margin-inline: auto;
+}
+.v2-revolving__emisor {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--v2-line-strong);
+  border-radius: var(--v2-radius-pill);
+  background: var(--v2-bg);
+  font-family: var(--v2-font-display);
+  font-weight: 500;
+  font-size: 13.5px;
+  color: var(--v2-ink);
+}
+.v2-revolving__emisor svg { color: var(--v2-success); flex-shrink: 0; }
+
 
 /* ── Header v2.2: tipografía Jakarta ───────────────────────────── */
 .v2-home .v2-header__phone {
