@@ -69,60 +69,108 @@ $provincias = array(
 
 <article class="v2-lso">
 
-	<!-- ── HERO TIPOGRÁFICO ─────────────────────────────────────────── -->
-	<section class="v2-section v2-section--cream v2-lso-hero">
-		<div class="v2-container">
-			<nav class="v2-lso-hero__crumbs" aria-label="Migas de pan">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Inicio</a>
-				<span aria-hidden="true">/</span>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>#areas">Áreas</a>
-				<span aria-hidden="true">/</span>
-				<span aria-current="page">Segunda Oportunidad</span>
-			</nav>
+	<!-- ── HERO FULL-BLEED LSO (mismo patrón que home) ─────────────── -->
+	<?php
+	$theme_uri  = get_template_directory_uri();
+	$bg_jpg     = $theme_uri . '/assets/img/hero/area-lso.jpg';
+	$bg_webp_lg = $theme_uri . '/assets/img/hero/area-lso.webp';
+	$bg_webp_md = $theme_uri . '/assets/img/hero/area-lso-1280.webp';
+	$bg_webp_sm = $theme_uri . '/assets/img/hero/area-lso-720.webp';
+	?>
+	<section class="v2-hero-bg v2-hero-bg--lso">
+		<picture class="v2-hero-bg__picture" aria-hidden="true">
+			<source type="image/webp"
+			        srcset="<?php echo esc_url( $bg_webp_sm ); ?> 720w,
+			                <?php echo esc_url( $bg_webp_md ); ?> 1280w,
+			                <?php echo esc_url( $bg_webp_lg ); ?> 1920w"
+			        sizes="100vw">
+			<img src="<?php echo esc_url( $bg_jpg ); ?>" alt="" fetchpriority="high" decoding="async" width="1920" height="470">
+		</picture>
+		<div class="v2-hero-bg__overlay" aria-hidden="true"></div>
 
-			<div class="v2-lso-hero__grid">
-				<div class="v2-lso-hero__title-col">
-					<span class="v2-eyebrow">ÁREA 01 / 06 · ESPECIALIDAD PRINCIPAL</span>
-					<h1 class="v2-lso-hero__title">
-						Ley de<br>
-						<em>Segunda</em><br>
-						Oportunidad.
-					</h1>
+		<div class="v2-hero-bg__inner" data-stagger>
+			<div class="v2-hero-bg__left">
+				<nav class="v2-lso-bghero__crumbs" aria-label="Migas de pan">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Inicio</a>
+					<span aria-hidden="true">/</span>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>#areas">Áreas</a>
+					<span aria-hidden="true">/</span>
+					<span aria-current="page">Segunda Oportunidad</span>
+				</nav>
+				<span class="v2-hero-bg__eyebrow">ÁREA 01 / 06 · ESPECIALIDAD PRINCIPAL</span>
+				<h1 class="v2-hero-bg__title">
+					Cancela tus deudas con la
+					<em class="v2-hero-bg__accent">Ley de Segunda Oportunidad.</em>
+				</h1>
+				<p class="v2-hero-bg__lead">
+					Cancelación legal de deudas para personas físicas y autónomos.
+					Procedimiento concursal completo desde el análisis de viabilidad
+					hasta el BEPI.
+				</p>
+				<div class="v2-hero-bg__ctas">
+					<a class="v2-btn v2-btn--inverse" href="#contacto-form">
+						Análisis de viabilidad gratuito
+						<span class="v2-arrow" aria-hidden="true">→</span>
+					</a>
+					<a class="v2-btn v2-btn--inverse-ghost v2-btn--mono" href="tel:<?php echo esc_attr( MORILLO_PHONE_RAW ); ?>">
+						☎ <?php echo esc_html( MORILLO_PHONE ); ?>
+					</a>
 				</div>
-				<div class="v2-lso-hero__aside">
-					<p class="v2-lso-hero__lead">
-						Cancelación legal de deudas para personas físicas y autónomos.
-						Procedimiento concursal completo desde el análisis de viabilidad
-						hasta el BEPI.
-					</p>
-					<div class="v2-lso-hero__ctas">
-						<a href="#contacto-form" class="v2-btn v2-btn--primary">
-							Análisis de viabilidad gratuito
-							<span class="v2-arrow" aria-hidden="true">→</span>
-						</a>
-						<a href="tel:<?php echo esc_attr( MORILLO_PHONE_RAW ); ?>" class="v2-btn v2-btn--ghost">
-							☎ <?php echo esc_html( MORILLO_PHONE ); ?>
-						</a>
+				<div class="v2-hero-bg__microstats">
+					<div class="v2-hero-bg__microstat">
+						<span class="v2-hero-bg__microstat-label">BEPI</span>
+						<span class="v2-hero-bg__microstat-value">92%</span>
 					</div>
-					<div class="v2-lso-hero__stats">
-						<div class="v2-lso-hero__stat">
-							<p class="v2-lso-hero__stat-num">92<sup>%</sup></p>
-							<p class="v2-lso-hero__stat-lbl">BEPI concedidos</p>
-							<p class="v2-lso-hero__stat-sub">Sobre expedientes admitidos</p>
-						</div>
-						<div class="v2-lso-hero__stat">
-							<p class="v2-lso-hero__stat-num">143</p>
-							<p class="v2-lso-hero__stat-lbl">Concursos resueltos</p>
-							<p class="v2-lso-hero__stat-sub">2019 – 2026</p>
-						</div>
-						<div class="v2-lso-hero__stat">
-							<p class="v2-lso-hero__stat-num">4–8<sup>m</sup></p>
-							<p class="v2-lso-hero__stat-lbl">Tiempo medio</p>
-							<p class="v2-lso-hero__stat-sub">Desde la admisión</p>
-						</div>
+					<div class="v2-hero-bg__microstat">
+						<span class="v2-hero-bg__microstat-label">CASOS</span>
+						<span class="v2-hero-bg__microstat-value">143</span>
+					</div>
+					<div class="v2-hero-bg__microstat">
+						<span class="v2-hero-bg__microstat-label">TIEMPO</span>
+						<span class="v2-hero-bg__microstat-value">4–8m</span>
 					</div>
 				</div>
 			</div>
+
+			<form class="v2-hero-form" method="post" action="#contacto-form" novalidate aria-label="Captura rápida de contacto">
+				<input type="text" name="hp_nombre" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+				<p class="v2-hero-form__eyebrow">CONSULTA GRATUITA</p>
+				<h2 class="v2-hero-form__title">Cuéntanos tu caso.</h2>
+				<p class="v2-hero-form__sub">Te respondemos en menos de 24h.</p>
+				<div class="v2-hero-form__stack">
+					<div class="v2-hero-form__field">
+						<label for="lso-hf-nombre" class="screen-reader-text">Nombre</label>
+						<input type="text" id="lso-hf-nombre" name="hf_nombre" placeholder="Nombre" required>
+					</div>
+					<div class="v2-hero-form__field">
+						<label for="lso-hf-tel" class="screen-reader-text">Teléfono</label>
+						<input type="tel" id="lso-hf-tel" name="hf_tel" placeholder="Teléfono" required>
+					</div>
+					<div class="v2-hero-form__field">
+						<label for="lso-hf-email" class="screen-reader-text">Email</label>
+						<input type="email" id="lso-hf-email" name="hf_email" placeholder="Email" required>
+					</div>
+					<div class="v2-hero-form__field">
+						<label for="lso-hf-importe" class="screen-reader-text">Importe aproximado de deuda</label>
+						<select id="lso-hf-importe" name="hf_importe" required>
+							<option value="">Importe aproximado de deuda</option>
+							<option value="<8000">Menos de 8.000 €</option>
+							<option value="8000-15000">8.000 – 15.000 €</option>
+							<option value="15000-100000">15.000 – 100.000 €</option>
+							<option value=">100000">Más de 100.000 €</option>
+						</select>
+					</div>
+					<label class="v2-hero-form__checkbox">
+						<input type="checkbox" name="hf_acepto" required>
+						<span>Acepto la <a href="<?php echo esc_url( home_url( '/politica-de-privacidad/' ) ); ?>">política de privacidad</a>.</span>
+					</label>
+					<button type="submit" class="v2-btn v2-btn--primary v2-btn--block v2-hero-form__submit">
+						Pedir consulta gratuita
+						<span class="v2-arrow" aria-hidden="true">→</span>
+					</button>
+				</div>
+				<p class="v2-hero-form__microcopy">SIN COMPROMISO · CONFIDENCIAL</p>
+			</form>
 		</div>
 	</section>
 

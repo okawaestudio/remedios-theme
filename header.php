@@ -17,13 +17,29 @@
 	<?php // Preload Plus Jakarta Sans 600 (display crítico). ?>
 	<link rel="preload" href="<?php echo esc_url( get_template_directory_uri() . '/assets/fonts/jakarta/plus-jakarta-sans-latin-600-normal.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
 
-	<?php // Preload del hero bg Madrid sólo en home (carga inútil en otras páginas). ?>
-	<?php if ( is_front_page() ) : ?>
+	<?php
+	// Preload del hero bg sólo en páginas con hero full-bleed (home + LSO).
+	$theme_uri = get_template_directory_uri();
+	$hero_preload = null;
+	if ( is_front_page() ) {
+		$hero_preload = array(
+			'sm' => $theme_uri . '/assets/img/hero/madrid-granvia-720.webp',
+			'md' => $theme_uri . '/assets/img/hero/madrid-granvia-1280.webp',
+			'lg' => $theme_uri . '/assets/img/hero/madrid-granvia.webp',
+		);
+	} elseif ( is_page_template( 'template-lso-v2.php' ) ) {
+		$hero_preload = array(
+			'sm' => $theme_uri . '/assets/img/hero/area-lso-720.webp',
+			'md' => $theme_uri . '/assets/img/hero/area-lso-1280.webp',
+			'lg' => $theme_uri . '/assets/img/hero/area-lso.webp',
+		);
+	}
+	if ( $hero_preload ) : ?>
 	<link rel="preload"
-	      href="<?php echo esc_url( get_template_directory_uri() . '/assets/img/hero/madrid-granvia-720.webp' ); ?>"
+	      href="<?php echo esc_url( $hero_preload['sm'] ); ?>"
 	      as="image"
 	      type="image/webp"
-	      imagesrcset="<?php echo esc_url( get_template_directory_uri() . '/assets/img/hero/madrid-granvia-720.webp' ); ?> 720w, <?php echo esc_url( get_template_directory_uri() . '/assets/img/hero/madrid-granvia-1280.webp' ); ?> 1280w, <?php echo esc_url( get_template_directory_uri() . '/assets/img/hero/madrid-granvia.webp' ); ?> 1920w"
+	      imagesrcset="<?php echo esc_url( $hero_preload['sm'] ); ?> 720w, <?php echo esc_url( $hero_preload['md'] ); ?> 1280w, <?php echo esc_url( $hero_preload['lg'] ); ?> 1920w"
 	      imagesizes="100vw"
 	      fetchpriority="high">
 	<?php endif; ?>
