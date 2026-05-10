@@ -334,6 +334,25 @@ $provincias = array(
 		</div>
 	</section>
 
+	<!-- ── OPINIONES (iframe ReputationHub) ─────────────────────────── -->
+	<section class="v2-section v2-section--white v2-lso-reviews">
+		<div class="v2-container">
+			<header class="v2-lso-reviews__head">
+				<span class="v2-eyebrow">OPINIONES</span>
+				<h2 class="v2-lso-reviews__title">Opiniones reales, <em>sin filtrar</em>.</h2>
+			</header>
+			<div class="v2-lso-reviews__widget">
+				<iframe class="lc_reviews_widget"
+					src="https://reputationhub.site/reputation/widgets/review_widget/I09cC0fnhUb9b56hCVTu?widgetId=6863a50a151681172a7f056b"
+					frameborder="0"
+					scrolling="no"
+					style="min-width: 100%; width: 100%;"
+					title="Opiniones y reseñas de clientes"
+					loading="lazy"></iframe>
+			</div>
+		</div>
+	</section>
+
 	<!-- ── ÁREAS RELACIONADAS ───────────────────────────────────────── -->
 	<section class="v2-section v2-section--cream">
 		<div class="v2-container">

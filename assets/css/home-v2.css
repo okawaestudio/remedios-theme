@@ -3211,6 +3211,39 @@
 .v2-lso-bghero__crumbs a:hover { color: #fff; }
 .v2-lso-bghero__crumbs span[aria-current] { color: rgba(255, 255, 255, 0.85); }
 
+/* ── Reviews iframe (ReputationHub) ─────────────────────────────── */
+.v2-lso-reviews__head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+.v2-lso-reviews__title {
+  font-family: var(--v2-font-display);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--v2-ink);
+  margin: 16px 0 0 0;
+}
+.v2-lso-reviews__title em { font-style: italic; color: var(--v2-primary); }
+.v2-lso-reviews__widget {
+  background: var(--v2-bg);
+  border: 1px solid var(--v2-line);
+  border-radius: var(--v2-radius-md);
+  padding: 24px;
+  min-height: 480px;
+  overflow: hidden;
+}
+.v2-lso-reviews__widget iframe {
+  border: 0;
+  width: 100%;
+  min-height: 480px;
+  display: block;
+  background: transparent;
+}
+
 
 /* ── Header v2.2: tipografía Jakarta ───────────────────────────── */
 .v2-home .v2-header__phone {
