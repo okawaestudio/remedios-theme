@@ -16,22 +16,33 @@ $updated = 0;
 $errors  = array();
 
 foreach ( morillo_lso_provincias() as $slug => $data ) {
-	$page_slug  = 'abogado-segunda-oportunidad-' . $slug;
-	$page_title = 'Abogado Segunda Oportunidad en ' . $data['nombre'];
+	$new_slug  = 'ley-segunda-oportunidad-' . $slug;
+	$old_slug  = 'abogado-segunda-oportunidad-' . $slug;
+	$page_title = 'Ley de Segunda Oportunidad en ' . $data['nombre'];
 
-	// Buscar si ya existe
-	$existing = get_page_by_path( $page_slug, OBJECT, 'page' );
+	// Buscar si ya existe (primero por nuevo slug, después por viejo)
+	$existing = get_page_by_path( $new_slug, OBJECT, 'page' );
+	if ( ! $existing ) {
+		$existing = get_page_by_path( $old_slug, OBJECT, 'page' );
+	}
+	$page_slug = $new_slug;
 
 	if ( $existing ) {
-		// Actualizar template + meta + título por si cambió el dataset
-		wp_update_post( array(
+		// Si el slug actual no coincide con el nuevo, actualizamos.
+		// wp_update_post con post_name guarda automáticamente _wp_old_slug
+		// para mantener el redirect 301 desde el slug viejo.
+		$update_args = array(
 			'ID'         => $existing->ID,
 			'post_title' => $page_title,
-		) );
+		);
+		if ( $existing->post_name !== $new_slug ) {
+			$update_args['post_name'] = $new_slug;
+		}
+		wp_update_post( $update_args );
 		update_post_meta( $existing->ID, '_wp_page_template', 'template-lso-provincia.php' );
 		update_post_meta( $existing->ID, '_morillo_lso_provincia_slug', $slug );
 		$updated++;
-		WP_CLI::log( "↻  $page_slug (ID {$existing->ID}) actualizada" );
+		WP_CLI::log( "↻  $new_slug (ID {$existing->ID}) actualizada" . ( $existing->post_name !== $new_slug ? " [slug migrado desde {$existing->post_name}]" : '' ) );
 		continue;
 	}
 

@@ -85,7 +85,7 @@ $cities = array(
 		<ul class="v2-spain-coverage__grid">
 			<?php foreach ( $cities as $c ) :
 				list( $name, $slug ) = $c;
-				$url = home_url( '/abogado-segunda-oportunidad-' . $slug . '/' );
+				$url = home_url( '/ley-segunda-oportunidad-' . $slug . '/' );
 			?>
 				<li class="v2-spain-coverage__item">
 					<a href="<?php echo esc_url( $url ); ?>" class="v2-spain-coverage__link">

@@ -16,7 +16,7 @@ require_once get_template_directory() . '/inc/lso-provincias.php';
 $prov_slug = get_post_meta( get_the_ID(), '_morillo_lso_provincia_slug', true );
 if ( ! $prov_slug ) {
 	// Fallback: derivar del post_name (abogado-segunda-oportunidad-{X})
-	$prov_slug = preg_replace( '/^abogado-segunda-oportunidad-/', '', get_post()->post_name );
+	$prov_slug = preg_replace( '/^(ley-segunda-oportunidad-|abogado-segunda-oportunidad-)/', '', get_post()->post_name );
 }
 $prov = morillo_lso_provincia_data( $prov_slug );
 if ( ! $prov ) {
@@ -118,13 +118,12 @@ $faqs = array(
 	),
 );
 
-$h1_main = 'Abogado Segunda Oportunidad en ' . $prov['nombre'];
-$h1_em   = 'Abogado <em>Segunda Oportunidad</em> en ' . esc_html( $prov['nombre'] );
+$h1_main = 'Ley de Segunda Oportunidad en ' . $prov['nombre'];
 ?>
 
 <article class="v2-lso"
          itemscope itemtype="https://schema.org/Service">
-	<meta itemprop="name" content="Abogado Ley de Segunda Oportunidad — <?php echo esc_attr( $prov['nombre'] ); ?>">
+	<meta itemprop="name" content="Ley de Segunda Oportunidad — <?php echo esc_attr( $prov['nombre'] ); ?>">
 	<meta itemprop="serviceType" content="Concurso de persona natural · Ley 16/2022">
 	<div itemprop="provider" itemscope itemtype="https://schema.org/LegalService" style="display:none;">
 		<meta itemprop="name" content="Remedios Morillo Abogados">
@@ -152,9 +151,9 @@ $h1_em   = 'Abogado <em>Segunda Oportunidad</em> en ' . esc_html( $prov['nombre'
 					<span aria-hidden="true">/</span>
 					<span aria-current="page"><?php echo esc_html( $prov['nombre'] ); ?></span>
 				</nav>
-				<span class="v2-hero-bg__eyebrow">SEGUNDA OPORTUNIDAD · <?php echo esc_html( strtoupper( $prov['nombre'] ) ); ?></span>
+				<span class="v2-hero-bg__eyebrow">LEY DE SEGUNDA OPORTUNIDAD · <?php echo esc_html( strtoupper( $prov['nombre'] ) ); ?></span>
 				<h1 class="v2-hero-bg__title">
-					Abogado <em class="v2-hero-bg__accent">Segunda Oportunidad</em><br>
+					<em class="v2-hero-bg__accent">Ley de Segunda Oportunidad</em><br>
 					en <?php echo esc_html( $prov['nombre'] ); ?>.
 				</h1>
 				<p class="v2-hero-bg__lead">
@@ -190,7 +189,7 @@ $h1_em   = 'Abogado <em>Segunda Oportunidad</em> en ' . esc_html( $prov['nombre'
 
 			<form class="v2-hero-form" method="post" action="#contacto-form" novalidate aria-label="Captura rápida de contacto">
 				<input type="text" name="hp_nombre" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
-				<p class="v2-hero-form__eyebrow">CONSULTA GRATUITA · <?php echo esc_html( strtoupper( $prov['nombre'] ) ); ?></p>
+				<p class="v2-hero-form__eyebrow">LEY 2ª OPORTUNIDAD · <?php echo esc_html( strtoupper( $prov['nombre'] ) ); ?></p>
 				<h2 class="v2-hero-form__title">Cuéntanos tu caso.</h2>
 				<p class="v2-hero-form__sub">Te respondemos en menos de 24h.</p>
 				<div class="v2-hero-form__stack">
