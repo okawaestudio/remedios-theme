@@ -11,11 +11,10 @@
 defined( 'ABSPATH' ) || exit;
 
 add_action( 'wp_enqueue_scripts', function () {
-	if ( ! is_front_page() ) return;
-
-	// Desencolar v1 sólo en la home — el resto del sitio sigue con v1 sin tocar.
-	// Las fuentes Google Fonts CDN sobran porque ya cargamos Fraunces/Inter/JBM
-	// self-hostadas; tokens.css y main.css v1 pueden colisionar con el scope v2.
+	// v2.5: el sistema v2 (header + footer + tipografía + tokens) es global.
+	// Desencolamos los assets v1 en TODO el sitio para evitar colisiones.
+	// La hoja main.css v1 con clases .rm-* y .site-* legacy se mantiene
+	// en disco pero ya no se carga.
 	wp_dequeue_style( 'morillo-fonts' );
 	wp_dequeue_style( 'morillo-tokens' );
 	wp_dequeue_style( 'morillo-main' );
