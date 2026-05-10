@@ -3677,6 +3677,83 @@
 }
 .v2-revolving__emisor svg { color: var(--v2-success); flex-shrink: 0; }
 
+/* ── GASTOS HIPOTECARIOS · 5 cards con porcentaje destacado ─── */
+.v2-gastos__grid { grid-template-columns: repeat(5, 1fr); gap: 14px; }
+@media (max-width: 1100px) { .v2-gastos__grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px)  { .v2-gastos__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 460px)  { .v2-gastos__grid { grid-template-columns: 1fr; } }
+
+.v2-gastos-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.v2-gastos-card__pct {
+  font-family: var(--v2-font-display);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--v2-success);
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-feature-settings: "tnum";
+}
+.v2-gastos-card--no .v2-gastos-card__pct { color: var(--v2-danger); }
+.v2-gastos-card--no { background: rgba(185, 28, 28, 0.04); border-color: rgba(185, 28, 28, 0.15); }
+.v2-gastos-card--no .v2-bancario-card__title { color: var(--v2-danger); }
+
+/* ── GASTOS · bloque plazo destacado ───────────────────────── */
+.v2-gastos-plazo {
+  display: flex;
+  gap: 28px;
+  padding: 36px 32px;
+  background: var(--v2-primary);
+  color: #fff;
+  border-radius: var(--v2-radius-md);
+  align-items: center;
+}
+@media (max-width: 700px) {
+  .v2-gastos-plazo { flex-direction: column; align-items: flex-start; padding: 28px 24px; }
+}
+.v2-gastos-plazo__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.10);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--v2-accent);
+  flex-shrink: 0;
+}
+.v2-gastos-plazo__eyebrow {
+  font-family: var(--v2-font-display);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--v2-accent);
+  margin: 0 0 8px 0;
+}
+.v2-gastos-plazo__title {
+  font-family: var(--v2-font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: #fff;
+  margin: 0 0 8px 0;
+}
+.v2-gastos-plazo__desc {
+  font-family: var(--v2-font-display);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+  max-width: 60ch;
+}
+
 
 /* ── Header v2.2: tipografía Jakarta ───────────────────────────── */
 .v2-home .v2-header__phone {
