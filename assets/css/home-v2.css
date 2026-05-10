@@ -3387,6 +3387,78 @@
   font-weight: 500;
 }
 
+/* ── Spain coverage grid (home, antes del footer) ────────────────── */
+.v2-spain-coverage__head {
+  text-align: center;
+  margin-bottom: 56px;
+  max-width: 920px;
+  margin-inline: auto;
+}
+.v2-spain-coverage__title {
+  font-family: var(--v2-font-display);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--v2-ink);
+  margin: 0 0 18px 0;
+  text-wrap: balance;
+}
+.v2-spain-coverage__sub {
+  font-family: var(--v2-font-display);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--v2-muted-strong);
+  margin: 0;
+}
+.v2-spain-coverage__sub em {
+  font-style: normal;
+  color: var(--v2-accent);
+  font-weight: 500;
+}
+
+.v2-spain-coverage__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px 32px;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+@media (max-width: 1100px) { .v2-spain-coverage__grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 700px)  { .v2-spain-coverage__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 420px)  { .v2-spain-coverage__grid { grid-template-columns: 1fr; } }
+
+.v2-spain-coverage__item { margin: 0; }
+.v2-spain-coverage__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--v2-font-display);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--v2-ink);
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color var(--v2-dur-fast) var(--v2-ease-out),
+              transform var(--v2-dur-fast) var(--v2-ease-out);
+}
+.v2-spain-coverage__pin {
+  color: var(--v2-blue);
+  flex-shrink: 0;
+  transition: color var(--v2-dur-fast) var(--v2-ease-out);
+}
+.v2-spain-coverage__link:hover {
+  color: var(--v2-primary);
+  transform: translateX(2px);
+}
+.v2-spain-coverage__link:hover .v2-spain-coverage__pin {
+  color: var(--v2-primary);
+}
+
 
 /* ── Header v2.2: tipografía Jakarta ───────────────────────────── */
 .v2-home .v2-header__phone {
